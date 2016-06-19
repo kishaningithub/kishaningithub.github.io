@@ -8,15 +8,6 @@
 <script>
 
   var urls = [
-     'https://lh3.googleusercontent.com/-WYxygd97AJM/VlFRooun7XI/AAAAAAAAfKc/Lc9xu-YCMlEmUKdFdaPNzEQpC_9XAJbrACKgB/IMG_6254.JPG',
-    'https://lh3.googleusercontent.com/-V2GE1-AvbXg/VliBcA5ghxI/AAAAAAAAqoA/5Dsyu6DnsyIrtKZlFzugn6nMhoo8HI-6Q/IMG_6643.JPG',
-    'https://lh3.googleusercontent.com/-HTyvwUIWivU/VmhRp-u3PpI/AAAAAAAAjbc/oByziw6bB50cuPpDbg0lPMRTKIXQIlyCQ/IMG_6679.JPG',
-    'https://lh3.googleusercontent.com/-5CXdZ0cvbaE/VpuqemY3K2I/AAAAAAAAqns/_QaOcAnuaXY5L_Q-Co6IqjjhO4MYrQIRA/IMG_6987.JPG',
-    'https://lh3.googleusercontent.com/-upDl7atfdTc/VtLyTUyf5BI/AAAAAAAAnGU/5DU0SS6Lb-8GgeE3IEBC4rKEqEAi84x5Q/IMG_7157.JPG',
-    'https://lh3.googleusercontent.com/-g0Aiu4CrBLo/Vu0tqpXj5AI/AAAAAAAAqno/8fI2s79o96c4if0zkju1WbRurz-71YfLw/IMG_7224.JPG',
-    'https://lh3.googleusercontent.com/-ryY27j_Uy-g/Vy22RvJm49I/AAAAAAAAqnY/UwtCCEZTeWUGGTO1cc6R-r8ZODn7g4pUA/IMG_1643.JPG',
-    'https://lh3.googleusercontent.com/-649FGt-wCfk/V0uwoD1Tl9I/AAAAAAAAqnI/mKyRTv5AYlAFij3ntDA5tTcmm62tMge2Q/IMG_7516.JPG',
-    'https://lh3.googleusercontent.com/-gQpFhy4lTlw/V1T7t13x9mI/AAAAAAAApu4/1QjB_hlZRDcNUUCs5CpgCewokeVrOTfkwCKgB/IMG_1963.JPG',
     'https://lh3.googleusercontent.com/-WYxygd97AJM/VlFRooun7XI/AAAAAAAAfKc/Lc9xu-YCMlEmUKdFdaPNzEQpC_9XAJbrACKgB/IMG_6254.JPG',
     'https://lh3.googleusercontent.com/-V2GE1-AvbXg/VliBcA5ghxI/AAAAAAAAqoA/5Dsyu6DnsyIrtKZlFzugn6nMhoo8HI-6Q/IMG_6643.JPG',
     'https://lh3.googleusercontent.com/-HTyvwUIWivU/VmhRp-u3PpI/AAAAAAAAjbc/oByziw6bB50cuPpDbg0lPMRTKIXQIlyCQ/IMG_6679.JPG',
@@ -27,6 +18,8 @@
     'https://lh3.googleusercontent.com/-649FGt-wCfk/V0uwoD1Tl9I/AAAAAAAAqnI/mKyRTv5AYlAFij3ntDA5tTcmm62tMge2Q/IMG_7516.JPG',
     'https://lh3.googleusercontent.com/-gQpFhy4lTlw/V1T7t13x9mI/AAAAAAAApu4/1QjB_hlZRDcNUUCs5CpgCewokeVrOTfkwCKgB/IMG_1963.JPG'
     ];
+  
+  var images = []
 
 var canvas = document.getElementById("canvas");
 canvas.width = window.innerWidth;
@@ -36,6 +29,16 @@ var radius = canvas.height / 2;
 ctx.translate(radius, radius);
 radius = radius * 0.90
 setInterval(drawClock, 1000);
+
+function preload() {
+    var length = urls.length;
+    for(var i = 0;  i < length; i++) {
+      images[i] = new Image();
+      images[i].src = 'https://res.cloudinary.com/kishanb/image/fetch/w_' + Math.floor(radius) + ',h_' + Math.floor(radius) + ',c_fill,g_face,r_max,f_png/' + urls[i];
+    }
+}
+
+preload();
 
 function getRandomArbitrary(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
@@ -66,8 +69,6 @@ function drawFace(ctx, radius) {
   ctx.fillStyle = '#333';
   ctx.fill();
 }
-
-
 
 function drawNumbers(ctx, radius) {
   var ang;
@@ -109,13 +110,9 @@ function drawTime(ctx, radius){
 
 function drawImage(ctx)
 {
-   var img = new Image();
-   var randomIndex = getRandomArbitrary(0, urls.length);
-   console.log(randomIndex);
-   img.src = 'https://res.cloudinary.com/kishanb/image/fetch/w_' + Math.floor(radius) + ',h_' + Math.floor(radius) + ',c_fill,g_face,r_max,f_png/' + urls[randomIndex];
-   ctx.drawImage(img, - Math.floor(radius) / 2, - Math.floor(radius) / 2);
+   var randomIndex = getRandomArbitrary(0, images.length);
+   ctx.drawImage(images[randomIndex], - Math.floor(radius) / 2, - Math.floor(radius) / 2);
 }
-
 
 function drawHand(ctx, pos, length, width) {
     ctx.beginPath();
