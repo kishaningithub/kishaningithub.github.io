@@ -48,6 +48,9 @@ stack backtrace:
 The worse part is this is a run time error and the back trace does
 not even give the exact line number. 😓
 
+The above was a simple 3 liner consider the same happening in a bigger project and say that the string slice
+is extracted from a JSON REST response which gave you chinese where you were expecting ASCII and you cant know which line this error occured. What will you do? Will you ditch slices altogether in rust? I leave it to you...
+
 # Why did this happen
 
 The error message says 'byte index 1 is not a char boundary; it is inside '可' (bytes 0..3) of '可通過每頁左上角的連結隨時調整'. In rust the strings indices are actually byte indices and a that a single charecter can occupy multiple bytes. In this case the charecter 可 requires 3 bytes to for storage. So, when you are creating a string slice its up you to make sure the start and end byte index are actually char indexes 😄. Good luck with that! 😄
