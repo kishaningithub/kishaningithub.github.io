@@ -2,7 +2,7 @@
 title = "Breaking rust strings"
 description = "Explore the edge cases of rust lang string implementation"
 tags = [
-    "rust",
+    "rust"
 ]
 date = "2018-05-05"
 categories = [
