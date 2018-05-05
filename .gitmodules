@@ -1,0 +1,4 @@
+[submodule "themes/hugo-sustain"]
+	path = themes/hugo-sustain
+	url = https://github.com/kishaningithub/hugo-sustain.git
+	branch = master

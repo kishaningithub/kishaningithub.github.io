@@ -1,0 +1,6 @@
+name: Projects
+source:
+  - icon: fa fa-github
+    name: Creative portfolio theme for hugo
+    description: Creative portfolio is a clean and elegant template mainly made for designers and creatives but can be easily transformed into a generic website.
+    url: https://github.com/kishaningithub/hugo-creative-portfolio-theme
