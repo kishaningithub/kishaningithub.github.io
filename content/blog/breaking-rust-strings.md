@@ -49,7 +49,7 @@ The worse part is this is a run time error and the back trace does
 not even give the exact line number. 😓
 
 The above was a simple 3 liner consider the same happening in a bigger project and say that the string slice
-is extracted from a JSON REST response which gave you chinese where you were expecting ASCII and you cant know which line this error occured. What will you do? Will you ditch slices altogether in rust? I leave it to you...
+is extracted from a JSON REST response which gave you chinese where you were expecting ASCII and you cant know which line this error occurred. What will you do? Will you ditch slices altogether in rust? I leave it to you...
 
 # Why did this happen
 
