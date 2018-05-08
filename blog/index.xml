@@ -17,7 +17,7 @@
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://kishaningithub.github.io/blog/breaking-rust-strings/</guid>
-      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here  println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first charecter out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.
+      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here  println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.
 If you expected the output to be 可. You are in for a surprise!
 break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
     </item>
