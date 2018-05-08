@@ -18,7 +18,7 @@ fn main() {
 }
 ```
 
-In the above code i want to extract the first charecter out which is 可.
+In the above code i want to extract the first character out which is 可.
 Since the end indices are exclusive in rust i put forth a slice `0..1` on `chinese_text`.
 
 If you expected the output to be 可. You are in for a surprise!
@@ -53,7 +53,7 @@ is extracted from a JSON REST response which gave you chinese where you were exp
 
 # Why did this happen
 
-The error message says 'byte index 1 is not a char boundary; it is inside '可' (bytes 0..3) of '可通過每頁左上角的連結隨時調整'. In rust the strings indices are actually byte indices and a that a single charecter can occupy multiple bytes. In this case the charecter 可 requires 3 bytes to for storage. So, when you are creating a string slice its up you to make sure the start and end byte index are actually char indexes 😄. Good luck with that! 😄
+The error message says 'byte index 1 is not a char boundary; it is inside '可' (bytes 0..3) of '可通過每頁左上角的連結隨時調整'. In rust the strings indices are actually byte indices and a that a single character can occupy multiple bytes. In this case the character 可 requires 3 bytes to for storage. So, when you are creating a string slice its up you to make sure the start and end byte index are actually char indexes 😄. Good luck with that! 😄
 
 # The fix
 
