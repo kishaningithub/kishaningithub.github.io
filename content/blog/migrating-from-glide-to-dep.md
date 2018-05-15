@@ -4,7 +4,7 @@ description = "My experience in migrating from glide to dep"
 tags = [
     "golang", "go"
 ]
-date = "2018-05-05"
+date = "2018-05-15"
 categories = [
     "programming"
 ]
