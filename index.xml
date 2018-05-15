@@ -23,6 +23,16 @@ break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo]
     </item>
     
     <item>
+      <title>Migrating from glide to dep</title>
+      <link>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</guid>
+      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.
+➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
+    </item>
+    
+    <item>
       <title>Projects</title>
       <link>https://kishaningithub.github.io/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>

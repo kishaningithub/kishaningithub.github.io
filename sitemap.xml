@@ -8,6 +8,11 @@
   </url>
   
   <url>
+    <loc>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</loc>
+    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kishaningithub.github.io/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
   </url>
@@ -24,6 +29,18 @@
   </url>
   
   <url>
+    <loc>https://kishaningithub.github.io/tags/go/</loc>
+    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://kishaningithub.github.io/tags/golang/</loc>
+    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://kishaningithub.github.io/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -36,13 +53,13 @@
   </url>
   
   <url>
-    <loc>https://kishaningithub.github.io/categories/projects/</loc>
+    <loc>https://kishaningithub.github.io/tags/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://kishaningithub.github.io/tags/projects/</loc>
+    <loc>https://kishaningithub.github.io/categories/projects/</loc>
     <lastmod>2016-10-02T22:55:05-04:00</lastmod>
     <priority>0</priority>
   </url>
@@ -55,7 +72,7 @@
   
   <url>
     <loc>https://kishaningithub.github.io/tags/</loc>
-    <lastmod>2016-10-02T22:55:05-04:00</lastmod>
+    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
