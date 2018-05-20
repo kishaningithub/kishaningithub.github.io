@@ -5,7 +5,7 @@ env:
     secure: "S48ay9TJUqLOH47RIFdIS93i8gPVVum8ZtO4WiWKsdBX0wsFv9+cUS2Vj0gPOaPkZNiJhFQ/EWdbxN9i7ncmV08BnyCzZrPLVqaBe6s0T4A3vxrleezmqb7V3IW255o9Fq2KqpdICX5qIIGkEd4IkUsSrgBUxdetzr9ByBodC503a/1A8Y458MqdXLhQk3LaTril1ia23WlXfEZ/zPizYtCXDd9VHVt97qIR1lpWJ1cWdxhk7vMQVlpF0tkhvxcS5aNA3g0k+Wux+cHGv5tjl09NvTgaJfMA5jd04iEt8F7DoWZlNHQVUUxeHkUuHiR+ZXfTK+cBY/oEDBsI/KKxu7+HVZLQBOwTJh7ZVG+ftEHfvR/qwb7tMWid2krRz00DSmPUOLsS6+rkpEc9BP7yQCX6R3/Y5rkgOpuMW5/HEqrJUIYvbwy0BVdROYYuaF2EWzoX2sxsOcRhtwaF/NpJds2vJoT6nPjrksBd44UWC+viM8pH2TPKKc21yFVlPCwbODBDNXGJqsm1HW/hxi/D1ppoanySbpcusCk5HxeyEvqQecIeeHHLWFhBYdC/RuwwOLjfydoWWvVWuw4cd9Mc5fS0S7HP9lIZKaGpRSgZkuViMhPEt34Zkm33HHVe/QJwqgko7zSR/V58Rid5FWcmvUWM+MRMOpEonzou63vut44="
 
 install:
-  - wget -q "https://github.com/gohugoio/hugo/releases/download/v0.40.2/hugo_0.40.2_Linux-64bit.tar.gz" -O "hugo.tar.gz"
+  - wget -q "https://github.com/gohugoio/hugo/releases/download/v0.40.3/hugo_0.40.3_Linux-64bit.tar.gz" -O "hugo.tar.gz"
   - tar -xzf hugo.tar.gz
 
 script:
