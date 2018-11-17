@@ -6,7 +6,7 @@ disqusShortname = "kishanbsh"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 theme = "hugo-sustain"
-pygmentsCodeFences= true
+pygmentsCodeFences = true
 
 [permalinks]
   post = "/:year/:month/:day/:slug"
@@ -30,7 +30,7 @@ pygmentsCodeFences= true
   Email         = "kishancs46@gmail.com"
   Twitter       = "kishanbsh"
   LinkedIn      = "kishancs46"
-  Stackoverflow = "kishan-b"
+  Stackoverflow = "users/3316017/kishan-b"
 
 ## Main Menu
 [[menu.main]]
