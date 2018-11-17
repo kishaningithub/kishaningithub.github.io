@@ -2,7 +2,7 @@ baseurl = "https://kishaningithub.github.io/"
 languageCode = "en-US"
 title = "Kishan B"
 # Enable comments by entering your Disqus shortname
-disqusShortname = ""
+disqusShortname = "kishanbsh"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
 theme = "hugo-sustain"
@@ -16,6 +16,10 @@ pygmentsCodeFences= true
   avatarUrl = "https://res.cloudinary.com/kishanb/image/upload/w_200,h_200,r_max/v1450891432/image_n1gg4p.png"
   author = "Kishan B"
   description = "A site for myself"
+  about = """
+        <h3>Kishan is a self-motivated developer, who specializes in enterprise applications and systems.</h3>
+        <h3>He is also an active contributor and a strong advocate for Open source software.</h3>
+     """
 
   # Custom assets can be linked with their paths relative to static/
   custom_css = []
@@ -24,7 +28,7 @@ pygmentsCodeFences= true
 [params.social]
   Github        = "kishaningithub"
   Email         = "kishancs46@gmail.com"
-  Twitter       = "EXPLORE_TECH"
+  Twitter       = "kishanbsh"
   LinkedIn      = "kishancs46"
   Stackoverflow = "kishan-b"
 
@@ -39,8 +43,13 @@ pygmentsCodeFences= true
   identifier = "projects"
   weight = 200
   url = "/projects/"
+[[menu.main]]  
+  name = "talks"
+  identifier = "talks"
+  weight = 300
+  url = "/talks/"  
 [[menu.main]]
   name = "resume"
   identifier = "resume"
-  weight = 300
+  weight = 400
   url = "/resume/KishanB_Resume_2016.pdf"
