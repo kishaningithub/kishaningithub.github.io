@@ -1,6 +1,5 @@
 +++
 title = "Migrating from glide to dep"
-description = "My experience in migrating from glide to dep"
 tags = [
     "golang", "go"
 ]

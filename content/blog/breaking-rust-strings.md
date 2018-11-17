@@ -1,6 +1,5 @@
 +++
 title = "Breaking rust strings"
-description = "Explore the edge cases of rust lang string implementation"
 tags = [
     "rust"
 ]
