@@ -6,10 +6,22 @@
     <description>Recent content on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Nov 2018 19:17:42 +0530</lastBuildDate>
     
 	<atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Everyday Cryptography to secure your applications using Open Source tools</title>
+      <link>https://kishaningithub.github.io/talks/everyday-cryptography/</link>
+      <pubDate>Sat, 17 Nov 2018 19:17:42 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/talks/everyday-cryptography/</guid>
+      <description>View the talk The talk is hosted on hacker earth here.
+Description Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8 Even if it doesn’t, you are using these on a day-to-day basis in securing your information!
+We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.
+In this talk, we will be exploring the constructs of cryptographic techniques.</description>
+    </item>
     
     <item>
       <title>Migrating from glide to dep</title>
