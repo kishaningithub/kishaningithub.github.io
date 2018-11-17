@@ -38,16 +38,16 @@ pygmentsCodeFences = true
   weight = 100
   identifier = "blog"
   url = "/blog/"
-[[menu.main]]
-  name = "projects"
-  identifier = "projects"
-  weight = 200
-  url = "/projects/"
 [[menu.main]]  
   name = "talks"
   identifier = "talks"
+  weight = 200
+  url = "/talks/"
+[[menu.main]]
+  name = "projects"
+  identifier = "projects"
   weight = 300
-  url = "/talks/"  
+  url = "/projects/"
 [[menu.main]]
   name = "resume"
   identifier = "resume"
