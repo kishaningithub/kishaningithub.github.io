@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Using Multiple Databases With Spring Boot 2</title>
-      <link>https://kishaningithub.github.io/blog/using-multiple-databases-with-spring-boot-2/</link>
+      <title>Configuring multiple databases in Spring boot 2</title>
+      <link>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</link>
       <pubDate>Sun, 18 Nov 2018 05:03:04 +0530</pubDate>
       
-      <guid>https://kishaningithub.github.io/blog/using-multiple-databases-with-spring-boot-2/</guid>
+      <guid>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</guid>
       <description>Add the following your application.properties
 app.datasource.first.url=jdbc:postgresql://localhost:5432/demo-db app.datasource.first.username=dbuser app.datasource.first.password=dbpass app.datasource.second.url=jdbc:mysql://localhost/second app.datasource.second.username=dbuser app.datasource.second.password=dbpass The complete source code can be found on github</description>
     </item>
