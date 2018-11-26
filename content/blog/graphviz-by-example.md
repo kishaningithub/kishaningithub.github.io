@@ -1,5 +1,6 @@
 +++
-title = "Graphviz Cheatsheet"
+title = "Graphviz by example"
+description = "Documentation of my experiments with graphviz"
 date = 2018-11-21T06:34:16+01:00
 tags = ["dot","graphviz"]
 categories = []

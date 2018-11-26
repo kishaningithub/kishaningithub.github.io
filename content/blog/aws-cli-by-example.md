@@ -1,5 +1,6 @@
 +++
 title = "Aws cli by example"
+description = "Documentation of my experiments with aws cli"
 date = 2018-11-26T15:37:58+01:00
 tags = ["aws","cli"]
 categories = []

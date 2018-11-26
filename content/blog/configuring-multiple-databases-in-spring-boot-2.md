@@ -1,5 +1,6 @@
 +++
 title = "Configuring multiple databases in spring boot 2"
+description = "Configuring multiple databases in spring boot 2"
 date = 2018-11-18T05:03:04+05:30
 tags = ["java", "spring", "spring boot", "spring boot 2"]
 categories = []
