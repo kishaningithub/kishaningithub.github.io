@@ -5,6 +5,14 @@ tags = ["java", "spring", "spring boot", "spring boot 2"]
 categories = []
 +++
 
+<< Work in progress >>
+
+
+Have to felt the need for a spring boot application to connect with multiple relational databases?
+If so, Follow on to know how to get it up and running
+
+
+
 Add the following your `application.properties`
 
 ```properties
