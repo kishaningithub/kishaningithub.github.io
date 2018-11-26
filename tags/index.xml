@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 15:37:58 +0100</lastBuildDate>
     
 	<atom:link href="https://kishaningithub.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws</title>
+      <link>https://kishaningithub.github.io/tags/aws/</link>
+      <pubDate>Mon, 26 Nov 2018 15:37:58 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/aws/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cli</title>
+      <link>https://kishaningithub.github.io/tags/cli/</link>
+      <pubDate>Mon, 26 Nov 2018 15:37:58 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/cli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dot</title>
+      <link>https://kishaningithub.github.io/tags/dot/</link>
+      <pubDate>Wed, 21 Nov 2018 06:34:16 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/dot/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Go</title>
@@ -26,6 +53,15 @@
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://kishaningithub.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graphviz</title>
+      <link>https://kishaningithub.github.io/tags/graphviz/</link>
+      <pubDate>Wed, 21 Nov 2018 06:34:16 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/graphviz/</guid>
       <description></description>
     </item>
     

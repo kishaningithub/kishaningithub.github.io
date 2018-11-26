@@ -1,0 +1,14 @@
+graph {
+    sb[label="", image="300x300xspring-boot-logo.png"];
+    db1[label="Postgres"];
+    db2[label="Postgres"];
+    db3[label="Maria DB"];
+    db4[label="Maria DB"];
+    sb -- db1;
+    sb -- db2;
+    sb -- db3;
+    sb -- db4;
+}
+
+
+         

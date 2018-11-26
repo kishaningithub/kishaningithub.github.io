@@ -7,7 +7,7 @@
     <meta name="author" content="Kishan B" />
     <meta name="description" content="A site for myself">
     <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
-    <title>Blogs</title>
+    <title>Aws cli by example</title>
     <meta name="generator" content="Hugo 0.51" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
@@ -24,6 +24,7 @@
 
   <body>
     <div id="wrap">
+
       
       <nav class="navbar navbar-default">
   <div class="container">
@@ -53,80 +54,69 @@
   </div>
 </nav>
 
+      
       <div class="container">
-        <h3>Archive</h3>
-          <div class="panel panel-default">
-            <div class="panel-body">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kishaningithub.github.io/blog/aws-cli-by-example/">Aws cli by example</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 26, 2018
+            &nbsp;&nbsp;
             
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 26, 2018
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/aws-cli-by-example/">Aws cli by example</a></strong>
-                  </h5>
-                </div>
+            <span class="label label-success">aws</span>
+            
+            <span class="label label-success">cli</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              
+
+<h2 id="dynamo-db">Dynamo DB</h2>
+
+<h3 id="get-value-using-primary-key">Get value using primary key</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws dynamodb get-item --table-name users --key <span style="color:#e6db74">&#39;{&#34;username&#34;: {&#34;S&#34;: &#34;test&#34;}}&#39;</span></code></pre></div>
+<h3 id="dump-table-data-as-csv">Dump table data as csv</h3>
+
+<p>This expects that you have installed <a href="https://github.com/stedolan/jq">jq command</a> on you system.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws dynamodb scan --table-name users --query <span style="color:#e6db74">&#34;Items[].[username.S,email.S,passwordHash.S]&#34;</span> --output json | jq -r <span style="color:#e6db74">&#39;.[] | @csv&#39;</span> &gt; dump.csv</code></pre></div>
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
               </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 21, 2018
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/graphviz-cheatsheet/">Graphviz Cheatsheet</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    November 18, 2018
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/configuring-multiple-databases-in-spring-boot-2/">Configuring multiple databases in spring boot 2</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 15, 2018
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/migrating-from-glide-to-dep/">Migrating from glide to dep</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
-              <div class="row">
-                <div class="col-sm-4 col-md-4 col-lg-4">
-                  <h5 style="text-align: right">
-                    May 5, 2018
-                  </h5>
-                 </div>
-                 <div class="col-sm-8 col-md-8 col-lg-8">
-                   <h5 style="text-align: left">
-                    <strong><a href="/blog/breaking-rust-strings/">Breaking rust strings</a></strong>
-                  </h5>
-                </div>
-              </div>
-            
             </div>
           </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kishanbsh';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
       </div>
+      
     </div>
+
     
     <footer>
   <div id="footer">
@@ -148,5 +138,6 @@
 <script src="https://kishaningithub.github.io/js/ie10-viewport-bug-workaround.js"></script>
 
 
+    
   </body>
 </html>

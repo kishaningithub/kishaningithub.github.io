@@ -6,10 +6,30 @@
     <description>Recent content in Blogs on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 18 Nov 2018 05:03:04 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 15:37:58 +0100</lastBuildDate>
     
 	<atom:link href="https://kishaningithub.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Aws cli by example</title>
+      <link>https://kishaningithub.github.io/blog/aws-cli-by-example/</link>
+      <pubDate>Mon, 26 Nov 2018 15:37:58 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/aws-cli-by-example/</guid>
+      <description>Dynamo DB Get value using primary key aws dynamodb get-item --table-name users --key &amp;#39;{&amp;#34;username&amp;#34;: {&amp;#34;S&amp;#34;: &amp;#34;test&amp;#34;}}&amp;#39; Dump table data as csv This expects that you have installed jq command on you system.
+aws dynamodb scan --table-name users --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.</description>
+    </item>
+    
+    <item>
+      <title>Graphviz Cheatsheet</title>
+      <link>https://kishaningithub.github.io/blog/graphviz-cheatsheet/</link>
+      <pubDate>Wed, 21 Nov 2018 06:34:16 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/graphviz-cheatsheet/</guid>
+      <description>&amp;lt;&amp;lt; work in progress &amp;gt;&amp;gt;
+This page is a documentation of all the graphviz stuff that i did for my future self. I hope you find this useful as well 😊</description>
+    </item>
     
     <item>
       <title>Configuring multiple databases in spring boot 2</title>
@@ -17,7 +37,9 @@
       <pubDate>Sun, 18 Nov 2018 05:03:04 +0530</pubDate>
       
       <guid>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</guid>
-      <description>Add the following your application.properties
+      <description>&amp;lt;&amp;lt; Work in progress &amp;gt;&amp;gt;
+Have to felt the need for a spring boot application to connect with multiple relational databases? If so, Follow on to know how to get it up and running
+Add the following your application.properties
 app.datasource.first.url=jdbc:postgresql://localhost:5432/demo-db app.datasource.first.username=dbuser app.datasource.first.password=dbpass app.datasource.second.url=jdbc:mysql://localhost/second app.datasource.second.username=dbuser app.datasource.second.password=dbpass The complete source code can be found on github</description>
     </item>
     
