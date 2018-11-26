@@ -84,7 +84,13 @@
 <h3 id="dump-table-data-as-csv">Dump table data as csv</h3>
 
 <p>This expects that you have installed <a href="https://github.com/stedolan/jq">jq command</a> on you system.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws dynamodb scan --table-name users --query <span style="color:#e6db74">&#34;Items[].[username.S,email.S,passwordHash.S]&#34;</span> --output json | jq -r <span style="color:#e6db74">&#39;.[] | @csv&#39;</span> &gt; dump.csv</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws dynamodb scan --table-name users <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --query <span style="color:#e6db74">&#34;Items[].[username.S,email.S,passwordHash.S]&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>  --output json | jq -r <span style="color:#e6db74">&#39;.[] | @csv&#39;</span> &gt; dump.csv</code></pre></div>
+<h3 id="query-using-a-portion-of-composite-key">Query using a portion of composite key</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  aws dynamodb query --table-name users <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   --key-condition-expression <span style="color:#e6db74">&#34;username = :username&#34;</span> <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>   --expression-attribute-values  <span style="color:#e6db74">&#39;{&#34;:username&#34;:{&#34;S&#34;:&#34;test user&#34;}}&#39;</span></code></pre></div>
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
