@@ -73,17 +73,67 @@
             <div class="blogpost">
               
 
-<h2 id="symmetric-encryption">Symmetric encryption</h2>
+<ul>
+<li><a href="#symmetric-key">Symmetric key</a>
 
-<h3 id="encrypting">Encrypting</h3>
+<ul>
+<li><a href="#encryption">Encryption</a></li>
+<li><a href="#decryption">Decryption</a></li>
+</ul></li>
+<li><a href="#asymmetric-key">Asymmetric key</a>
+
+<ul>
+<li><a href="#key-generation">Key Generation</a>
+
+<ul>
+<li><a href="#public-key">Public key</a></li>
+<li><a href="#private-key">Private key</a></li>
+</ul></li>
+<li><a href="#encryption-1">Encryption</a></li>
+<li><a href="#decryption-1">Decryption</a></li>
+<li><a href="#sending-signed-messages">Sending signed messages</a></li>
+<li><a href="#reading-signed-messages">Reading signed messages</a></li>
+<li><a href="#encrypting-private-key">Encrypting private key</a></li>
+</ul></li>
+<li><a href="#others">Others</a>
+
+<ul>
+<li><a href="#find-openssl-version">Find openssl version</a></li>
+<li><a href="#list-ciphers">List ciphers</a></li>
+</ul></li>
+</ul>
+
+<h2 id="symmetric-key">Symmetric key</h2>
+
+<h3 id="encryption">Encryption</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#e6db74">&#34;top secret text&#34;</span> | openssl enc -aes-256-cbc -base64
 enter aes-256-cbc encryption password:
 Verifying - enter aes-256-cbc encryption password:
-U2FsdGVkX18duy5myKqv/eGvlEosO4QiDW/qzfQtHOhN9wLq/3MXCR4DdjLo9cHo</code></pre></div>
-<h3 id="decrypting">Decrypting</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#e6db74">&#34;U2FsdGVkX1/nTcZWVQStrpPgmUKve90KvyatNhUQVHoOB+MYv9QqEKrHbzKA7Yyk&#34;</span> | openssl enc -d -aes-256-cbc -base64
+<span style="color:#e6db74">&lt;&lt; encrypte</span>d text &gt;&gt;</code></pre></div>
+<h3 id="decryption">Decryption</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ echo <span style="color:#e6db74">&#34;&lt;&lt; encrypted text &gt;&gt;&#34;</span> | openssl enc -d -aes-256-cbc -base64
 enter aes-256-cbc decryption password:
 top secret text</code></pre></div>
+<h2 id="asymmetric-key">Asymmetric key</h2>
+
+<h3 id="key-generation">Key Generation</h3>
+
+<h4 id="public-key">Public key</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl genrsa -out private.pem <span style="color:#ae81ff">2048</span></code></pre></div>
+<h4 id="private-key">Private key</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsa -in private.pem -pubout -out public.pem</code></pre></div>
+<h3 id="encryption-1">Encryption</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsautl -encrypt -in secret-transmission.txt -out secret-transmission.txt.enc -inkey public.pem -pubin</code></pre></div>
+<h3 id="decryption-1">Decryption</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsautl -decrypt -in secret-transmission.txt.enc -out secret-transmission.txt -inkey private.pem</code></pre></div>
+<h3 id="sending-signed-messages">Sending signed messages</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsautl -sign -in secret-transmission.txt -out secret-transmission.txt.enc.signed -inkey private.pem</code></pre></div>
+<h3 id="reading-signed-messages">Reading signed messages</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsautl -verify -in secret-transmission.txt.enc.signed -out secret-transmission.txt -inkey public.pem -pubin</code></pre></div>
+<h3 id="encrypting-private-key">Encrypting private key</h3>
+
+<p>Never store private key in clear text format!</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">openssl rsa -in private.pem -des3 -out private-enc.pem</code></pre></div>
 <h2 id="others">Others</h2>
 
 <h3 id="find-openssl-version">Find openssl version</h3>
