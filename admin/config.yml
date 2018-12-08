@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: kishaningithub/my-personal-site
-  base_url: http://139.59.60.16:3000
+  base_url: https://kishanbsh.me/netlify-cms-auth
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads" 
 publish_mode: editorial_workflow
