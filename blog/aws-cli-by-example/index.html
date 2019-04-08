@@ -91,6 +91,10 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">  aws dynamodb query --table-name users <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   --key-condition-expression <span style="color:#e6db74">&#34;username = :username&#34;</span> <span style="color:#ae81ff">\
 </span><span style="color:#ae81ff"></span>   --expression-attribute-values  <span style="color:#e6db74">&#39;{&#34;:username&#34;:{&#34;S&#34;:&#34;test user&#34;}}&#39;</span></code></pre></div>
+<h2 id="kms">KMS</h2>
+
+<h3 id="generate-data-key-from-kms-master-key">Generate data key from KMS master key</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">aws kms generate-data-key-without-plaintext --key-id &lt;&lt;KMS master key&gt;&gt; --key-spec AES_256 --query CiphertextBlob --output text</code></pre></div>
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>

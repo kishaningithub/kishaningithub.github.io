@@ -27,7 +27,7 @@
       
       <guid>https://kishaningithub.github.io/blog/aws-cli-by-example/</guid>
       <description> Dynamo DB Get value using primary key aws dynamodb get-item --table-name users --key &amp;#39;{&amp;#34;username&amp;#34;: {&amp;#34;S&amp;#34;: &amp;#34;test&amp;#34;}}&amp;#39; Dump table data as csv This expects that you have installed jq command on you system.
-aws dynamodb scan --table-name users \  --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; \  --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.csv Query using a portion of composite key aws dynamodb query --table-name users \  --key-condition-expression &amp;#34;username = :username&amp;#34; \  --expression-attribute-values &amp;#39;{&amp;#34;:username&amp;#34;:{&amp;#34;S&amp;#34;:&amp;#34;test user&amp;#34;}}&amp;#39;</description>
+aws dynamodb scan --table-name users \  --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; \  --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.csv Query using a portion of composite key aws dynamodb query --table-name users \  --key-condition-expression &amp;#34;username = :username&amp;#34; \  --expression-attribute-values &amp;#39;{&amp;#34;:username&amp;#34;:{&amp;#34;S&amp;#34;:&amp;#34;test user&amp;#34;}}&amp;#39; KMS Generate data key from KMS master key aws kms generate-data-key-without-plaintext --key-id &amp;lt;&amp;lt;KMS master key&amp;gt;&amp;gt; --key-spec AES_256 --query CiphertextBlob --output text</description>
     </item>
     
     <item>
