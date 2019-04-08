@@ -31,3 +31,11 @@ aws dynamodb scan --table-name users \
    --key-condition-expression "username = :username" \
    --expression-attribute-values  '{":username":{"S":"test user"}}'
 ```
+
+## KMS
+
+### Generate data key from KMS master key
+
+```bash
+aws kms generate-data-key-without-plaintext --key-id <<KMS master key>> --key-spec AES_256 --query CiphertextBlob --output text
+```
