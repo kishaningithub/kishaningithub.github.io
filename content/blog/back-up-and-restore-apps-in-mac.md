@@ -47,38 +47,5 @@ You can ship this file anywhere
 
 Go to the directory in which you have your `Brewfile` and then run
 ```bash
-brew bundle dump
-```
-
-
-### Get value using primary key
-
-```bash
-aws dynamodb get-item --table-name users --key '{"username": {"S": "test"}}'
-```
-
-### Dump table data as csv
-
-This expects that you have installed [jq command](https://github.com/stedolan/jq) on you system.
-
-```bash
-aws dynamodb scan --table-name users \
-  --query "Items[].[username.S,email.S,passwordHash.S]" \
-  --output json | jq -r '.[] | @csv' > dump.csv
-```
-
-### Query using a portion of composite key
-
-```bash
-  aws dynamodb query --table-name users \
-   --key-condition-expression "username = :username" \
-   --expression-attribute-values  '{":username":{"S":"test user"}}'
-```
-
-## KMS
-
-### Generate data key from KMS master key
-
-```bash
-aws kms generate-data-key-without-plaintext --key-id <<KMS master key>> --key-spec AES_256 --query CiphertextBlob --output text
+brew bundle
 ```
