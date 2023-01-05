@@ -1,4 +1,4 @@
-# my-personal-site
+# My personal site
 
 [![Build Status](https://travis-ci.org/kishaningithub/my-personal-site.svg?branch=master)](https://travis-ci.org/kishaningithub/my-personal-site)
 
