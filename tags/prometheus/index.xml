@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>go on Kishan B</title>
-    <link>https://kishaningithub.github.io/tags/go/</link>
-    <description>Recent content in go on Kishan B</description>
+    <title>prometheus on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/prometheus/</link>
+    <description>Recent content in prometheus on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 17 Sep 2021 14:15:41 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 17 Sep 2021 14:15:41 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/prometheus/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Capturing Custom Last Request Time Metrics Using Prometheus in Gin</title>
       <link>https://kishaningithub.github.io/blog/capturing-custom-last-request-time-metrics-using-prometheus-in-gin/</link>
@@ -16,16 +16,6 @@
       <description>We will be using golang, gin, prometheus go library to expose last request time metrics
 Out of the box metrics Spin up a gin go application which exposes the metrics which comes out of the box via the /metrics endpoint
 package main import ( &amp;#34;github.com/gin-gonic/gin&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; &amp;#34;log&amp;#34; ) func main() { r := gin.Default() r.GET(&amp;#34;/metrics&amp;#34;, func(c *gin.Context) { handler := promhttp.Handler() handler.ServeHTTP(c.Writer, c.Request) }) err := r.Run(&amp;#34;:8080&amp;#34;) if err != nil { log.</description>
-    </item>
-    
-    <item>
-      <title>Migrating from glide to dep</title>
-      <link>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</link>
-      <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</guid>
-      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.
-➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
     </item>
     
   </channel>

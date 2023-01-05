@@ -17,6 +17,17 @@
     </item>
     
     <item>
+      <title>Capturing Custom Last Request Time Metrics Using Prometheus in Gin</title>
+      <link>https://kishaningithub.github.io/blog/capturing-custom-last-request-time-metrics-using-prometheus-in-gin/</link>
+      <pubDate>Fri, 17 Sep 2021 14:15:41 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/capturing-custom-last-request-time-metrics-using-prometheus-in-gin/</guid>
+      <description>We will be using golang, gin, prometheus go library to expose last request time metrics
+Out of the box metrics Spin up a gin go application which exposes the metrics which comes out of the box via the /metrics endpoint
+package main import ( &amp;#34;github.com/gin-gonic/gin&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; &amp;#34;log&amp;#34; ) func main() { r := gin.Default() r.GET(&amp;#34;/metrics&amp;#34;, func(c *gin.Context) { handler := promhttp.Handler() handler.ServeHTTP(c.Writer, c.Request) }) err := r.Run(&amp;#34;:8080&amp;#34;) if err != nil { log.</description>
+    </item>
+    
+    <item>
       <title>Backup and restore all your apps in Mac OS</title>
       <link>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</link>
       <pubDate>Tue, 23 Mar 2021 10:24:15 +0530</pubDate>
