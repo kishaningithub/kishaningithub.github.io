@@ -1,7 +1,7 @@
 +++
 title = "Use Zap to Perform Dast"
 description = ""
-date = 2023-01-05T14:02:53+05:30
+date = 2022-02-16T14:02:53+05:30
 tags = ["owasp", "dast", "security", "tooling"]
 categories = []
 +++
