@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rust on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/rust/</link>
+    <description>Recent content in rust on Kishan B</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 05 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Breaking rust strings</title>
+      <link>https://kishaningithub.github.io/blog/breaking-rust-strings/</link>
+      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/breaking-rust-strings/</guid>
+      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.
+If you expected the output to be 可. You are in for a surprise!
+break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
+    </item>
+    
+  </channel>
+</rss>

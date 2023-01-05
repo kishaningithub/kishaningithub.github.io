@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>dot on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/dot/</link>
+    <description>Recent content in dot on Kishan B</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 21 Nov 2018 06:34:16 +0100</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/dot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Graphviz by example</title>
+      <link>https://kishaningithub.github.io/blog/graphviz-by-example/</link>
+      <pubDate>Wed, 21 Nov 2018 06:34:16 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/graphviz-by-example/</guid>
+      <description>&amp;laquo; work in progress &amp;raquo;
+This page is a documentation of all the graphviz stuff that i did for my future self. I hope you find this useful as well 😊</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>spring boot on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/spring-boot/</link>
+    <description>Recent content in spring boot on Kishan B</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sun, 18 Nov 2018 05:03:04 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Configuring multiple databases in spring boot 2</title>
+      <link>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</link>
+      <pubDate>Sun, 18 Nov 2018 05:03:04 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</guid>
+      <description>&amp;laquo; Work in progress &amp;raquo;
+Have to felt the need for a spring boot application to connect with multiple relational databases? If so, Follow on to know how to get it up and running
+Add the following your application.properties
+app.datasource.first.url=jdbc:postgresql://localhost:5432/demo-db app.datasource.first.username=dbuser app.datasource.first.password=dbpass app.datasource.second.url=jdbc:mysql://localhost/second app.datasource.second.username=dbuser app.datasource.second.password=dbpass The complete source code can be found on github</description>
+    </item>
+    
+  </channel>
+</rss>

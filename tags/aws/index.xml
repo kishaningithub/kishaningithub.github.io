@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aws on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/aws/</link>
+    <description>Recent content in aws on Kishan B</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Mon, 26 Nov 2018 15:37:58 +0100</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aws cli by example</title>
+      <link>https://kishaningithub.github.io/blog/aws-cli-by-example/</link>
+      <pubDate>Mon, 26 Nov 2018 15:37:58 +0100</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/aws-cli-by-example/</guid>
+      <description>Dynamo DB Get value using primary key aws dynamodb get-item --table-name users --key &amp;#39;{&amp;#34;username&amp;#34;: {&amp;#34;S&amp;#34;: &amp;#34;test&amp;#34;}}&amp;#39; Dump table data as csv This expects that you have installed jq command on you system.
+aws dynamodb scan --table-name users \ --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; \ --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.csv Query using a portion of composite key aws dynamodb query --table-name users \ --key-condition-expression &amp;#34;username = :username&amp;#34; \ --expression-attribute-values &amp;#39;{&amp;#34;:username&amp;#34;:{&amp;#34;S&amp;#34;:&amp;#34;test user&amp;#34;}}&amp;#39; KMS Generate data key from KMS master key aws kms generate-data-key-without-plaintext --key-id &amp;lt;&amp;lt;KMS master key&amp;gt;&amp;gt; --key-spec AES_256 --query CiphertextBlob --output text </description>
+    </item>
+    
+  </channel>
+</rss>

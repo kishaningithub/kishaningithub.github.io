@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kishan B" />
+    <meta name="description" content="A site for myself">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
+    <title>Openssl by Example</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kishaningithub.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/talks/">TALKS</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/resume/kishanb_resume_2016.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kishaningithub.github.io/blog/openssl-by-example/">Openssl by Example</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          November 26, 2018
+            &nbsp;&nbsp;
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <ul>
+<li><a href="#symmetric-key">Symmetric key</a>
+<ul>
+<li><a href="#encryption">Encryption</a></li>
+<li><a href="#decryption">Decryption</a></li>
+</ul>
+</li>
+<li><a href="#asymmetric-key">Asymmetric key</a>
+<ul>
+<li><a href="#key-generation">Key Generation</a>
+<ul>
+<li><a href="#public-key">Public key</a></li>
+<li><a href="#private-key">Private key</a></li>
+</ul>
+</li>
+<li><a href="#encryption-1">Encryption</a></li>
+<li><a href="#decryption-1">Decryption</a></li>
+<li><a href="#sending-signed-messages">Sending signed messages</a></li>
+<li><a href="#reading-signed-messages">Reading signed messages</a></li>
+<li><a href="#encrypting-private-key">Encrypting private key</a></li>
+</ul>
+</li>
+<li><a href="#others">Others</a>
+<ul>
+<li><a href="#find-openssl-version">Find openssl version</a></li>
+<li><a href="#list-ciphers">List ciphers</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="symmetric-key">Symmetric key</h2>
+<h3 id="encryption">Encryption</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;top secret text&#34;</span> | openssl enc -aes-256-cbc -base64
+</span></span><span style="display:flex;"><span>enter aes-256-cbc encryption password:
+</span></span><span style="display:flex;"><span>Verifying - enter aes-256-cbc encryption password:
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;&lt; encrypte</span>d text &gt;&gt;
+</span></span></code></pre></div><h3 id="decryption">Decryption</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ echo <span style="color:#e6db74">&#34;&lt;&lt; encrypted text &gt;&gt;&#34;</span> | openssl enc -d -aes-256-cbc -base64
+</span></span><span style="display:flex;"><span>enter aes-256-cbc decryption password:
+</span></span><span style="display:flex;"><span>top secret text
+</span></span></code></pre></div><h2 id="asymmetric-key">Asymmetric key</h2>
+<h3 id="key-generation">Key Generation</h3>
+<h4 id="public-key">Public key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl genrsa -out private.pem <span style="color:#ae81ff">2048</span>
+</span></span></code></pre></div><h4 id="private-key">Private key</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsa -in private.pem -pubout -out public.pem
+</span></span></code></pre></div><h3 id="encryption-1">Encryption</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsautl -encrypt -in secret-transmission.txt -out secret-transmission.txt.enc -inkey public.pem -pubin
+</span></span></code></pre></div><h3 id="decryption-1">Decryption</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsautl -decrypt -in secret-transmission.txt.enc -out secret-transmission.txt -inkey private.pem
+</span></span></code></pre></div><h3 id="sending-signed-messages">Sending signed messages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsautl -sign -in secret-transmission.txt -out secret-transmission.txt.enc.signed -inkey private.pem
+</span></span></code></pre></div><h3 id="reading-signed-messages">Reading signed messages</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsautl -verify -in secret-transmission.txt.enc.signed -out secret-transmission.txt -inkey public.pem -pubin
+</span></span></code></pre></div><h3 id="encrypting-private-key">Encrypting private key</h3>
+<p>Never store private key in clear text format!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl rsa -in private.pem -des3 -out private-enc.pem
+</span></span></code></pre></div><h2 id="others">Others</h2>
+<h3 id="find-openssl-version">Find openssl version</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ openssl version
+</span></span><span style="display:flex;"><span>LibreSSL 2.6.4
+</span></span></code></pre></div><h3 id="list-ciphers">List ciphers</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>openssl list-cipher-commands
+</span></span></code></pre></div>
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kishanbsh';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kishaningithub.github.io/js/docs.min.js"></script>
+<script src="https://kishaningithub.github.io/js/main.js"></script>
+
+<script src="https://kishaningithub.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>

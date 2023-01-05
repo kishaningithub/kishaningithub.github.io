@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talks on Kishan B</title>
+    <link>https://kishaningithub.github.io/talks/</link>
+    <description>Recent content in Talks on Kishan B</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Sat, 17 Nov 2018 19:17:42 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/talks/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Everyday Cryptography to secure your applications using Open Source tools</title>
+      <link>https://kishaningithub.github.io/talks/everyday-cryptography/</link>
+      <pubDate>Sat, 17 Nov 2018 19:17:42 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/talks/everyday-cryptography/</guid>
+      <description>View the talk The talk is hosted on hacker earth here.
+Description Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8 Even if it doesn’t, you are using these on a day-to-day basis in securing your information!
+We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.
+In this talk, we will be exploring the constructs of cryptographic techniques.</description>
+    </item>
+    
+  </channel>
+</rss>

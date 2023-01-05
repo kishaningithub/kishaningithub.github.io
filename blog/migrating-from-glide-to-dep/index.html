@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kishan B" />
+    <meta name="description" content="A site for myself">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
+    <title>Migrating from glide to dep</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kishaningithub.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/talks/">TALKS</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/resume/kishanb_resume_2016.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/">Migrating from glide to dep</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          May 15, 2018
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">golang</span>
+            
+            <span class="label label-success">go</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>I recently migrated one of the go lang projects that i contribute to which is <a href="https://github.com/aswinkarthik93/csvdiff">csvdiff</a> from <a href="https://github.com/Masterminds/glide">glide</a> to <a href="https://github.com/golang/dep">dep</a>. Here is what i had to do.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜  csvdiff git:<span style="color:#f92672">(</span>glide-to-dep-migration<span style="color:#f92672">)</span> dep init
+</span></span><span style="display:flex;"><span>Importing configuration from glide. These are only initial constraints, and are further refined during the solve process.
+</span></span><span style="display:flex;"><span>Detected glide configuration files...
+</span></span><span style="display:flex;"><span>Converting from glide.yaml and glide.lock...
+</span></span><span style="display:flex;"><span>  Using ^1.0.0 as initial constraint <span style="color:#66d9ef">for</span> imported dep github.com/cespare/xxhash
+</span></span><span style="display:flex;"><span>  Trying v1.0.0 <span style="color:#f92672">(</span>5c37fe3<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/cespare/xxhash
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>b8bc1bf<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/mitchellh/go-homedir
+</span></span><span style="display:flex;"><span>  Using ^0.0.2 as initial constraint <span style="color:#66d9ef">for</span> imported dep github.com/spf13/cobra
+</span></span><span style="display:flex;"><span>  Trying v0.0.2 <span style="color:#f92672">(</span>a1f051b<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/cobra
+</span></span><span style="display:flex;"><span>  Using ^1.0.2 as initial constraint <span style="color:#66d9ef">for</span> imported dep github.com/spf13/viper
+</span></span><span style="display:flex;"><span>  Trying v1.0.2 <span style="color:#f92672">(</span>b5e8006<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/viper
+</span></span><span style="display:flex;"><span>  Using ^1.2.1 as initial constraint <span style="color:#66d9ef">for</span> imported dep github.com/stretchr/testify
+</span></span><span style="display:flex;"><span>  Trying v1.2.1 <span style="color:#f92672">(</span>12b6f73<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/stretchr/testify
+</span></span><span style="display:flex;"><span>  Trying v1.4.7 <span style="color:#f92672">(</span>c282820<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/fsnotify/fsnotify
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>ef8a98b<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/hashicorp/hcl
+</span></span><span style="display:flex;"><span>  Trying v1.0 <span style="color:#f92672">(</span>76626ae<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/inconshreveable/mousetrap
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>2c9e950<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/magiconair/properties
+</span></span><span style="display:flex;"><span>  Trying * <span style="color:#f92672">(</span>00c29f5<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/mitchellh/mapstructure
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>66540cf<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/pelletier/go-toml
+</span></span><span style="display:flex;"><span>  Trying v1.1.0 <span style="color:#f92672">(</span>6364489<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/afero
+</span></span><span style="display:flex;"><span>  Trying v1.2.0 <span style="color:#f92672">(</span>8965335<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/cast
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>7c0cea3<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/jwalterweatherman
+</span></span><span style="display:flex;"><span>  Trying v1.0.1 <span style="color:#f92672">(</span>583c0c0<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/spf13/pflag
+</span></span><span style="display:flex;"><span>  Trying * <span style="color:#f92672">(</span>f6cff07<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep golang.org/x/sys
+</span></span><span style="display:flex;"><span>  Trying * <span style="color:#f92672">(</span>7922cc4<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep golang.org/x/text
+</span></span><span style="display:flex;"><span>  Trying v2.2.1 <span style="color:#f92672">(</span>5420a8b<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep gopkg.in/yaml.v2
+</span></span><span style="display:flex;"><span>  Trying master <span style="color:#f92672">(</span>8991bc2<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/davecgh/go-spew
+</span></span><span style="display:flex;"><span>  Trying v1.0.0 <span style="color:#f92672">(</span>792786c<span style="color:#f92672">)</span> as initial lock <span style="color:#66d9ef">for</span> imported dep github.com/pmezard/go-difflib
+</span></span><span style="display:flex;"><span>  Using master as constraint <span style="color:#66d9ef">for</span> direct dep github.com/mitchellh/go-homedir
+</span></span><span style="display:flex;"><span>  Locking in master <span style="color:#f92672">(</span>b8bc1bf<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> direct dep github.com/mitchellh/go-homedir
+</span></span><span style="display:flex;"><span>  Using ^1.0.0 as constraint <span style="color:#66d9ef">for</span> direct dep github.com/aswinkarthik93/csvdiff
+</span></span><span style="display:flex;"><span>  Locking in v1.0.0 <span style="color:#f92672">(</span>0b29a09<span style="color:#f92672">)</span> <span style="color:#66d9ef">for</span> direct dep github.com/aswinkarthik93/csvdiff
+</span></span><span style="display:flex;"><span>Old vendor backed up to /Users/kishanb/Programming/Tools/goworkspace/src/github.com/kishaningithub/csvdiff/_vendor-20180515104327
+</span></span></code></pre></div><p>This created a couple of new files and a backup of the vendor directory.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜  csvdiff git:<span style="color:#f92672">(</span>glide-to-dep-migration<span style="color:#f92672">)</span> ✗ git status
+</span></span><span style="display:flex;"><span>Alias tip: gst
+</span></span><span style="display:flex;"><span>On branch glide-to-dep-migration
+</span></span><span style="display:flex;"><span>Untracked files:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add &lt;file&gt;...&#34;</span> to include in what will be committed<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	Gopkg.lock
+</span></span><span style="display:flex;"><span>	Gopkg.toml
+</span></span><span style="display:flex;"><span>	_vendor-20180515104327/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nothing added to commit but untracked files present <span style="color:#f92672">(</span>use <span style="color:#e6db74">&#34;git add&#34;</span> to track<span style="color:#f92672">)</span>
+</span></span></code></pre></div><p>Then i checked if the project builds successfully.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>➜  csvdiff git:<span style="color:#f92672">(</span>glide-to-dep-migration<span style="color:#f92672">)</span> ✗ go test -race -coverprofile<span style="color:#f92672">=</span>coverage.txt -covermode<span style="color:#f92672">=</span>atomic -v ./...
+</span></span><span style="display:flex;"><span>?   	github.com/kishaningithub/csvdiff	<span style="color:#f92672">[</span>no test files<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestPrimaryKeyPositions
+</span></span><span style="display:flex;"><span>--- PASS: TestPrimaryKeyPositions <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestValueColumnPositions
+</span></span><span style="display:flex;"><span>--- PASS: TestValueColumnPositions <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestConfigValidate
+</span></span><span style="display:flex;"><span>--- PASS: TestConfigValidate <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestDefaultConfigFormatter
+</span></span><span style="display:flex;"><span>--- PASS: TestDefaultConfigFormatter <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestConfigFormatter
+</span></span><span style="display:flex;"><span>--- PASS: TestConfigFormatter <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestJSONFormat
+</span></span><span style="display:flex;"><span>--- PASS: TestJSONFormat <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestRowMarkFormatter
+</span></span><span style="display:flex;"><span>--- PASS: TestRowMarkFormatter <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PASS
+</span></span><span style="display:flex;"><span>coverage: 11.2% of statements
+</span></span><span style="display:flex;"><span>ok  	github.com/kishaningithub/csvdiff/cmd	1.042s	coverage: 11.2% of statements
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestDiff
+</span></span><span style="display:flex;"><span>--- PASS: TestDiff <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestCreateDigest
+</span></span><span style="display:flex;"><span>--- PASS: TestCreateDigest <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestDigestForFile
+</span></span><span style="display:flex;"><span>--- PASS: TestDigestForFile <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestPositionsMapValues
+</span></span><span style="display:flex;"><span>--- PASS: TestPositionsMapValues <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">===</span> RUN   TestPositionsMapValuesReturnsCompleteStringCsvIfEmpty
+</span></span><span style="display:flex;"><span>--- PASS: TestPositionsMapValuesReturnsCompleteStringCsvIfEmpty <span style="color:#f92672">(</span>0.00s<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>PASS
+</span></span><span style="display:flex;"><span>coverage: 0.0% of statements
+</span></span><span style="display:flex;"><span>ok  	github.com/kishaningithub/csvdiff/pkg/digest	1.031s	coverage: 0.0% of statements
+</span></span></code></pre></div><p>Since it did i removed the glide.* files and the backed up _vendor-* directory.</p>
+<p>This is the <a href="https://github.com/aswinkarthik93/csvdiff/pull/12">pull request</a> submitted to <a href="https://github.com/aswinkarthik93/csvdiff">that repo</a> for this change.</p>
+<p>That&rsquo;s all folks!</p>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kishanbsh';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kishaningithub.github.io/js/docs.min.js"></script>
+<script src="https://kishaningithub.github.io/js/main.js"></script>
+
+<script src="https://kishaningithub.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
