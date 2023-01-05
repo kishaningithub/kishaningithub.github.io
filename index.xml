@@ -6,7 +6,18 @@
     <description>Recent content on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 16 Feb 2022 14:02:53 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 15:12:24 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Used TDD Approach for a Hello World Rust CLI App</title>
+      <link>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</link>
+      <pubDate>Sun, 26 Jun 2022 15:12:24 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</guid>
+      <description>For the first time ever in my life i wrote hello world application using TDD (Test driven development). Don&amp;rsquo;t get me wrong here, i have practiced TDD before for larger applications but never have i done it for an hello world app.
+Problem Write an CLI application that prints out &amp;ldquo;Hello TDD world!&amp;rdquo; in STDOUT.
+How did i do it? I created a project using cargo new hello-tdd-world I added a dependency assert_cmd which lets us test out outputs of any binary program Created a file tests/cli.</description>
+    </item>
+    
     <item>
       <title>Use Zap to Perform Dast</title>
       <link>https://kishaningithub.github.io/blog/use-zap-to-perform-dast/</link>

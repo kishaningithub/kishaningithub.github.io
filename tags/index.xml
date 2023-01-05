@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 16 Feb 2022 14:02:53 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Jun 2022 15:12:24 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rust</title>
+      <link>https://kishaningithub.github.io/tags/rust/</link>
+      <pubDate>Sun, 26 Jun 2022 15:12:24 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/rust/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tdd</title>
+      <link>https://kishaningithub.github.io/tags/tdd/</link>
+      <pubDate>Sun, 26 Jun 2022 15:12:24 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/tags/tdd/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>dast</title>
       <link>https://kishaningithub.github.io/tags/dast/</link>
@@ -202,15 +220,6 @@
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
       
       <guid>https://kishaningithub.github.io/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rust</title>
-      <link>https://kishaningithub.github.io/tags/rust/</link>
-      <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://kishaningithub.github.io/tags/rust/</guid>
       <description></description>
     </item>
     

@@ -3,21 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://kishaningithub.github.io/blog/</loc>
-    <lastmod>2022-02-16T14:02:53+05:30</lastmod>
-  </url><url>
-    <loc>https://kishaningithub.github.io/tags/dast/</loc>
-    <lastmod>2022-02-16T14:02:53+05:30</lastmod>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/</loc>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/rust/</loc>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/</loc>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/tdd/</loc>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</loc>
+    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/dast/</loc>
     <lastmod>2022-02-16T14:02:53+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/owasp/</loc>
     <lastmod>2022-02-16T14:02:53+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/security/</loc>
-    <lastmod>2022-02-16T14:02:53+05:30</lastmod>
-  </url><url>
-    <loc>https://kishaningithub.github.io/tags/</loc>
     <lastmod>2022-02-16T14:02:53+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/tooling/</loc>
@@ -120,9 +129,6 @@
     <lastmod>2018-05-15T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/blog/breaking-rust-strings/</loc>
-    <lastmod>2018-05-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://kishaningithub.github.io/tags/rust/</loc>
     <lastmod>2018-05-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/projects/</loc>
