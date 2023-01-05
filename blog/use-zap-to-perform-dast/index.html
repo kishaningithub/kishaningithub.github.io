@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kishan B" />
+    <meta name="description" content="A site for myself">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
+    <title>Use Zap to Perform Dast</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kishaningithub.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/talks/">TALKS</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/resume/kishanb_resume_2016.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kishaningithub.github.io/blog/use-zap-to-perform-dast/">Use Zap to Perform Dast</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 5, 2023
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">owasp</span>
+            
+            <span class="label label-success">dast</span>
+            
+            <span class="label label-success">security</span>
+            
+            <span class="label label-success">tooling</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <ul>
+<li><a href="#introduction">Introduction</a>
+<ul>
+<li><a href="#what-is-dynamic-application-security-testing-dast">What is Dynamic Application Security Testing (DAST)</a></li>
+<li><a href="#what-is-zap">What is ZAP</a></li>
+</ul>
+</li>
+<li><a href="#how-to-use-zap">How to use ZAP</a>
+<ul>
+<li><a href="#zap-scan-for-api">ZAP Scan for API</a>
+<ul>
+<li><a href="#local-run">Local Run</a>
+<ul>
+<li><a href="#example---for-api-with-swagger">Example - for API with Swagger</a></li>
+<li><a href="#for-soapgraphql">For SOAP/GraphQL</a></li>
+</ul>
+</li>
+<li><a href="#circleci-integrate">CircleCI Integrate</a>
+<ul>
+<li><a href="#example---for-api-with-swagger-1">Example - for API with Swagger</a></li>
+<li><a href="#for-soapgraphql-1">For SOAP/GraphQL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#zap-scan-for-application-with-ui">ZAP Scan for Application (with UI)</a>
+<ul>
+<li><a href="#local-run-for-ui-app">Local Run for UI app</a></li>
+<li><a href="#circleci-integration-for-ui-app">CircleCI Integration for UI app</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<h3 id="what-is-dynamic-application-security-testing-dast">What is Dynamic Application Security Testing (DAST)</h3>
+<p>Dynamic application security testing (DAST) is a process of testing an application or software product in an operating state. This kind of testing is helpful for industry-standard compliance and general security protections for evolving projects.</p>
+<h3 id="what-is-zap">What is ZAP</h3>
+<p>Zed Attack Proxy (ZAP) is a free, open-source penetration testing tool being maintained under the umbrella of the Open Web Application Security Project (OWASP). ZAP is designed specifically for testing web applications and is both flexible and extensible.</p>
+<h2 id="how-to-use-zap">How to use ZAP</h2>
+<h3 id="zap-scan-for-api">ZAP Scan for API</h3>
+<p>You can use <a href="https://www.zaproxy.org/docs/docker/api-scan/">zap-api-scan</a> to perform scans against APIs defined by OpenAPI, SOAP, or GraphQL. If your API is protected with authentication, you will need to prepare a token or API key before running the script.</p>
+<h4 id="local-run">Local Run</h4>
+<h5 id="example---for-api-with-swagger">Example - for API with Swagger</h5>
+<p>The following example shows how to run ZAP locally against an API with:</p>
+<ul>
+<li>url: http://192.168.1.10</li>
+<li>the swagger doc url:  http://192.168.1.10/swagger.json</li>
+<li>Authentication header name: Authorization</li>
+<li>Authentication header value: api_token_value</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li>Put your token or API key used for authentication into a configuration file or environment parameters, the following is a configuration file example.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ZAP_AUTH_HEADER_VALUE<span style="color:#f92672">=</span>api_token_value
+</span></span><span style="display:flex;"><span>ZAP_AUTH_HEADER<span style="color:#f92672">=</span>Authorization
+</span></span><span style="display:flex;"><span>ZAP_AUTH_HEADER_SITE<span style="color:#f92672">=</span>192.168.1.10
+</span></span></code></pre></div><p>Note: the ZAP_AUTH_HEADER_SITE value should exclude the http/https protocol and port, e.g. for the target <a href="https://www.this-is-a-target.com:8080">https://www.this-is-a-target.com:8080</a>, the ZAP_AUTH_HEADER_SITE value should be <a href="https://www.this-is-a-target.com">www.this-is-a-target.com</a>.</p>
+<ol start="2">
+<li>Run the following command to pull the zap docker image</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull owasp/zap2docker-stable
+</span></span></code></pre></div><ol start="3">
+<li>Run the following command to trigger zap-api-scan for an API with swagger doc (please replace the values in color when you use it for your API):</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --env-file configuration_file_name --rm -v $PWD:/zap/wrk owasp/zap2docker-stable:latest zap-api-scan.py -t http://192.168.1.10/swagger.json -f openapi -r report.html
+</span></span></code></pre></div><ol start="4">
+<li>After executing the above commands, a report.html should be generated in your current directory, it contains the test results.</li>
+</ol>
+<h5 id="for-soapgraphql">For SOAP/GraphQL</h5>
+<ol>
+<li>To run ZAP Scan against SOAP/GraphQL is very similar to the way to run it against Swagger API, the only difference is you need to change the &ldquo;-f&rdquo; option in the step 3 command to the following.</li>
+</ol>
+<p>For SOAP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --env-file configuration_file_name --rm -v $PWD:/zap/wrk owasp/zap2docker-stable:latest zap-api-scan.py -t http://192.168.1.10/soap_wsdl_url -f soap -r report.html
+</span></span></code></pre></div><p>For GraphQL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -it --env-file configuration_file_name --rm -v $PWD:/zap/wrk owasp/zap2docker-stable:latest zap-api-scan.py -t http://192.168.1.10/graphql_url -f graphql -r report.html
+</span></span></code></pre></div><h4 id="circleci-integrate">CircleCI Integrate</h4>
+<h5 id="example---for-api-with-swagger-1">Example - for API with Swagger</h5>
+<p>The following example shows how to integrate ZAP into CircleCI to scan the API with:</p>
+<ul>
+<li>url: http://192.168.1.10</li>
+<li>the swagger doc url:  http://192.168.1.10/swagger.json</li>
+<li>Authentication header name: Authorization</li>
+<li>Authentication header value: api_token_value</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li>Add the following Environment Variables into your project env in the CircleCI</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ZAP_AUTH_HEADER_VALUE<span style="color:#f92672">=</span>api_token_value
+</span></span><span style="display:flex;"><span>ZAP_AUTH_HEADER<span style="color:#f92672">=</span>Authorization
+</span></span><span style="display:flex;"><span>ZAP_AUTH_HEADER_SITE<span style="color:#f92672">=</span>target_url
+</span></span></code></pre></div><p>Note: the ZAP_AUTH_HEADER_SITE value should exclude the http/https protocol and port, e.g. for the target <a href="https://www.this-is-a-target.com:8080">https://www.this-is-a-target.com:8080</a>, the ZAP_AUTH_HEADER_SITE value should be <a href="https://www.this-is-a-target.com">www.this-is-a-target.com</a>.</p>
+<ol start="2">
+<li>Add the following content in .circleci/config.yml:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yml" data-lang="yml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scan</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">owasp/zap2docker-stable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">command</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              mkdir /zap/wrk
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              zap-api-scan.py -f openapi -t https://target-url/swagger.json -r report.html</span>              
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">store_artifacts</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/zap/wrk</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">destination</span>: <span style="color:#ae81ff">zap-report</span>
+</span></span></code></pre></div><ol start="3">
+<li>After executing the above commands, a zap-report/report.html should be generated in the pipeline artifacts, it contains the test results.</li>
+</ol>
+<h5 id="for-soapgraphql-1">For SOAP/GraphQL</h5>
+<p>To integrate ZAP Scan into CI/CD to scan the SOAP/GraphQL API is very similar to the way to run it against Swagger API, the only difference is you need to change the &ldquo;-f&rdquo; option in the step 2 .circleci/config.yml file.</p>
+<p>For SOAP:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scan</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">owasp/zap2docker-stable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">command</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              mkdir /zap/wrk
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              zap-api-scan.py -f soap  -t https://target-url/soap_wsdl_url -r report.html</span>              
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">store_artifacts</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/zap/wrk</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">destination</span>: <span style="color:#ae81ff">zap-report</span>
+</span></span></code></pre></div><p>For GraphQL:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scan</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">owasp/zap2docker-stable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">command</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              mkdir /zap/wrk
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              zap-api-scan.py -f graphql -t https://target-url/graphql_url -r report.html</span>              
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">store_artifacts</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/zap/wrk</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">destination</span>: <span style="color:#ae81ff">zap-report</span>
+</span></span></code></pre></div><h3 id="zap-scan-for-application-with-ui">ZAP Scan for Application (with UI)</h3>
+<p>You can use <a href="https://www.zaproxy.org/docs/docker/full-scan/">zap-full-scan</a> to perform a full active scan for a web application. If your application is protected with authentication, you will need to prepare an authorization header or cookie before running the script.</p>
+<h4 id="local-run-for-ui-app">Local Run for UI app</h4>
+<p>The following example shows how to run ZAP locally against an application with:</p>
+<ul>
+<li>url: http://192.168.1.10</li>
+<li>Authentication header name: Authorization</li>
+<li>Authentication header value: authrozation_token_here</li>
+</ul>
+<p>Note: Please change the header name to &ldquo;Cookie&rdquo; if your application is authenticated by cookie/session.</p>
+<p>Steps:</p>
+<ol>
+<li>Put your token or API key used for authentication into a configuration file or environment parameters, the following is a configuration file example.</li>
+</ol>
+<pre tabindex="0"><code>ZAP_AUTH_HEADER_VALUE=authrozation_token_here
+ZAP_AUTH_HEADER=Authorization
+ZAP_AUTH_HEADER_SITE=192.168.1.10
+</code></pre><p>Note: the ZAP_AUTH_HEADER_SITE value should exclude the http/https protocol and port, e.g. for the target <a href="https://www.this-is-a-target.com:8080">https://www.this-is-a-target.com:8080</a>, the ZAP_AUTH_HEADER_SITE value should be <a href="https://www.this-is-a-target.com">www.this-is-a-target.com</a>.</p>
+<ol start="2">
+<li>Run the following command to pull the zap docker image</li>
+</ol>
+<pre tabindex="0"><code>docker pull owasp/zap2docker-stable
+</code></pre><ol start="3">
+<li>Run the following command to trigger <a href="https://www.zaproxy.org/docs/docker/full-scan/">zap-full-scan</a> (please replace the values in color when you use it for your application):</li>
+</ol>
+<pre tabindex="0"><code>docker run -it --env-file configuration_file_name --rm -v $PWD:/zap/wrk owasp/zap2docker-stable:latest zap-full-scan.py -t http://192.168.1.10 -r report.html
+</code></pre><ol start="4">
+<li>After executing the above commands, a report.html should be generated in your current directory, it contains the test results.</li>
+</ol>
+<h4 id="circleci-integration-for-ui-app">CircleCI Integration for UI app</h4>
+<p>The following example shows how to integrate ZAP into CircleCI to scan the application with:</p>
+<ul>
+<li>url: http://192.168.1.10</li>
+<li>Authentication header name: Authorization</li>
+<li>Authentication header value: authrozation_token_here</li>
+</ul>
+<p>Steps:</p>
+<ol>
+<li>Add the following Environment Variables into your project env in the CircleCI:</li>
+</ol>
+<pre tabindex="0"><code>ZAP_AUTH_HEADER_VALUE=api_token_value
+ZAP_AUTH_HEADER=Authorization
+ZAP_AUTH_HEADER_SITE=target_url
+</code></pre><p>Note: the ZAP_AUTH_HEADER_SITE value should exclude the http/https protocol and port, e.g. for the target <a href="https://www.this-is-a-target.com:8080">https://www.this-is-a-target.com:8080</a>, the ZAP_AUTH_HEADER_SITE value should be <a href="https://www.this-is-a-target.com">www.this-is-a-target.com</a>.</p>
+<p>Note: Please change the header name to &ldquo;Cookie&rdquo; if your application is authenticated by cookie/session.</p>
+<ol>
+<li>Add the following content in .circleci/config.yml:</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">scan</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">docker</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">image</span>: <span style="color:#ae81ff">owasp/zap2docker-stable</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">command</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              mkdir /zap/wrk
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              zap-full-scan.py -t https://target-url -r report.html</span>              
+</span></span><span style="display:flex;"><span>      - <span style="color:#f92672">store_artifacts</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/zap/wrk</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">destination</span>: <span style="color:#ae81ff">zap-report</span>
+</span></span></code></pre></div><ol start="3">
+<li>After executing the above commands, a zap-report/report.html should be generated in the pipeline artifacts, it contains the test results.</li>
+</ol>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kishanbsh';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kishaningithub.github.io/js/docs.min.js"></script>
+<script src="https://kishaningithub.github.io/js/main.js"></script>
+
+<script src="https://kishaningithub.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
