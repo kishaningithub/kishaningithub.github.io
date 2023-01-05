@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>macosx on Kishan B</title>
-    <link>https://kishaningithub.github.io/tags/macosx/</link>
-    <description>Recent content in macosx on Kishan B</description>
+    <title>terminal on Kishan B</title>
+    <link>https://kishaningithub.github.io/tags/terminal/</link>
+    <description>Recent content in terminal on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Nov 2021 15:07:38 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/macosx/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 15:07:38 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Hard Disk Info in Mac Using Terminal</title>
       <link>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</link>
@@ -15,19 +15,6 @@
       <guid>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</guid>
       <description>Its pretty easy. Just run the diskutil like the following
 Command diskutil info disk0 Output Device Identifier: disk0 Device Node: /dev/disk0 Whole: Yes Part of Whole: disk0 Device / Media Name: APPLE SSD AP0256M Volume Name: Not applicable (no file system) Mounted: Not applicable (no file system) File System: None Content (IOContent): GUID_partition_scheme OS Can Be Installed: No Media Type: Generic Protocol: PCI-Express SMART Status: Verified Disk Size: 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units) Device Block Size: 4096 Bytes Media OS Use Only: No Media Read-Only: No Volume Read-Only: Not applicable (no file system) Device Location: Internal Removable Media: Fixed Solid State: Yes Virtual: No </description>
-    </item>
-    
-    <item>
-      <title>Backup and restore all your apps in Mac OS</title>
-      <link>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</link>
-      <pubDate>Tue, 23 Mar 2021 10:24:15 +0530</pubDate>
-      
-      <guid>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</guid>
-      <description>Prerequisite This assumes you are installing everything using homebrew as a practice. If you are not doing it already, getting started is as easy as it gets. Some
-Search for an app(cli/gui)
-brew search &amp;lt;&amp;lt;app&amp;gt;&amp;gt; To install a cli app
-brew install &amp;lt;&amp;lt;cli app&amp;gt;&amp;gt; To install a GUI app
-brew install --cask &amp;lt;&amp;lt;gui app&amp;gt;&amp;gt; Backup all your apps (cli and gui) brew bundle dump This will output a file called Brewfile whose contents will look like the following</description>
     </item>
     
   </channel>

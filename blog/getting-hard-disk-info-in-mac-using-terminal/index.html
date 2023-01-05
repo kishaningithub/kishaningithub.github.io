@@ -7,7 +7,7 @@
     <meta name="author" content="Kishan B" />
     <meta name="description" content="A site for myself">
     <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
-    <title>Backup and restore all your apps in Mac OS</title>
+    <title>Getting Hard Disk Info in Mac Using Terminal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -57,47 +57,60 @@
       <div class="container">
         <div class="blog-post">
           <h3>
-            <strong><a href="https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/">Backup and restore all your apps in Mac OS</a></strong>
+            <strong><a href="https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/">Getting Hard Disk Info in Mac Using Terminal</a></strong>
           </h3>
         </div>
         <div class="blog-title">
           <h4>
-          March 23, 2021
+          November 16, 2021
             &nbsp;&nbsp;
             
             <span class="label label-success">macosx</span>
             
-            <span class="label label-success">mac</span>
+            <span class="label label-success">terminal</span>
+            
+            <span class="label label-success">shell</span>
+            
+            <span class="label label-success">beginners</span>
             
           </h4>
         </div>
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              <h2 id="prerequisite">Prerequisite</h2>
-<p>This assumes you are installing everything using <a href="https://brew.sh/">homebrew</a> as a practice.
-If you are not doing it already, getting started is as easy as it gets. Some</p>
-<p>Search for an app(cli/gui)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew search &lt;&lt;app&gt;&gt;
-</span></span></code></pre></div><p>To install a cli app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install &lt;&lt;cli app&gt;&gt;
-</span></span></code></pre></div><p>To install a GUI app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew install --cask &lt;&lt;gui app&gt;&gt;
-</span></span></code></pre></div><h2 id="backup-all-your-apps-cli-and-gui">Backup all your apps (cli and gui)</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew bundle dump
-</span></span></code></pre></div><p>This will output a file called <code>Brewfile</code> whose contents will look like the following</p>
-<pre tabindex="0"><code>tap &#34;dkanejs/aws-session-manager-plugin&#34;
-tap &#34;go-delve/delve&#34;
-tap &#34;goreleaser/tap&#34;
-brew &#34;wget&#34;
-brew &#34;youtube-dl&#34;
-cask &#34;gimp&#34;
-cask &#34;zoom&#34;
-</code></pre><p>You can ship this file anywhere</p>
-<h2 id="restore-all-your-apps-cli-and-gui">Restore all your apps (cli and gui)</h2>
-<p>Go to the directory in which you have your <code>Brewfile</code> and then run</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>brew bundle
-</span></span></code></pre></div>
+              <p>Its pretty easy. Just run the <code>diskutil</code> like the following</p>
+<h2 id="command">Command</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>diskutil info disk0
+</span></span></code></pre></div><h2 id="output">Output</h2>
+<pre tabindex="0"><code>   Device Identifier:         disk0
+   Device Node:               /dev/disk0
+   Whole:                     Yes
+   Part of Whole:             disk0
+   Device / Media Name:       APPLE SSD AP0256M
+
+   Volume Name:               Not applicable (no file system)
+   Mounted:                   Not applicable (no file system)
+   File System:               None
+
+   Content (IOContent):       GUID_partition_scheme
+   OS Can Be Installed:       No
+   Media Type:                Generic
+   Protocol:                  PCI-Express
+   SMART Status:              Verified
+
+   Disk Size:                 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units)
+   Device Block Size:         4096 Bytes
+
+   Media OS Use Only:         No
+   Media Read-Only:           No
+   Volume Read-Only:          Not applicable (no file system)
+
+   Device Location:           Internal
+   Removable Media:           Fixed
+
+   Solid State:               Yes
+   Virtual:                   No
+</code></pre>
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
@@ -105,12 +118,12 @@ cask &#34;zoom&#34;
                   <div class="row">
                     <div class="col-sm-4 col-md-4 col-lg-4">
                       <h6 style="text-align: right">
-                        November 16, 2021
+                        March 23, 2021
                       </h6>
                     </div>
                     <div class="col-sm-8 col-md-8 col-lg-8">
                       <h6 style="text-align: left">
-                        <strong><a href="/blog/getting-hard-disk-info-in-mac-using-terminal/">Getting Hard Disk Info in Mac Using Terminal</a></strong>
+                        <strong><a href="/blog/back-up-and-restore-apps-in-mac/">Backup and restore all your apps in Mac OS</a></strong>
                       </h6>
                     </div>
                   </div>
