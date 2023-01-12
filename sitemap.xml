@@ -2,16 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://kishaningithub.github.io/tags/aws/</loc>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
+  </url><url>
     <loc>https://kishaningithub.github.io/blog/</loc>
-    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</loc>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/</loc>
-    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
   </url><url>
-    <loc>https://kishaningithub.github.io/tags/rust/</loc>
-    <lastmod>2022-06-26T15:12:24+05:30</lastmod>
+    <loc>https://kishaningithub.github.io/tags/redshift/</loc>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/redshift-serverless/</loc>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/</loc>
+    <lastmod>2023-01-12T10:34:53+05:30</lastmod>
+  </url><url>
+    <loc>https://kishaningithub.github.io/tags/rust/</loc>
     <lastmod>2022-06-26T15:12:24+05:30</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/tags/tdd/</loc>
@@ -76,9 +88,6 @@
   </url><url>
     <loc>https://kishaningithub.github.io/blog/openssl-by-example/</loc>
     <lastmod>2018-11-26T22:43:54+01:00</lastmod>
-  </url><url>
-    <loc>https://kishaningithub.github.io/tags/aws/</loc>
-    <lastmod>2018-11-26T15:37:58+01:00</lastmod>
   </url><url>
     <loc>https://kishaningithub.github.io/blog/aws-cli-by-example/</loc>
     <lastmod>2018-11-26T15:37:58+01:00</lastmod>

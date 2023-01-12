@@ -6,7 +6,17 @@
     <description>Recent content on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Sun, 26 Jun 2022 15:12:24 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 10:34:53 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to get the DDL dump of a redshift database</title>
+      <link>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</link>
+      <pubDate>Thu, 12 Jan 2023 10:34:53 +0530</pubDate>
+      
+      <guid>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</guid>
+      <description>When I was googling &amp;ldquo;How to get the DDL dump of a redshift database&amp;rdquo; I found this blog which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable for me, so I tried and found a better way which is given below
+Approach The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api</description>
+    </item>
+    
     <item>
       <title>Used TDD Approach for a Hello World Rust CLI App</title>
       <link>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</link>

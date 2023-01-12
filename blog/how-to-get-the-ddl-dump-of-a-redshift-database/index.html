@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kishan B" />
+    <meta name="description" content="A site for myself">
+    <link rel="shortcut icon" type="image/x-icon" href="https://kishaningithub.github.io/img/favicon.ico">
+    <title>How to get the DDL dump of a redshift database</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://kishaningithub.github.io/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,200bold,400old" />
+    
+    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
+    
+  </head>
+
+  <body>
+    <div id="wrap">
+
+      
+      <nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="https://kishaningithub.github.io/"><i class="fa fa-home"></i></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+      
+        
+        <li><a href="/blog/">BLOG</a></li>
+        
+        <li><a href="/talks/">TALKS</a></li>
+        
+        <li><a href="/projects/">PROJECTS</a></li>
+        
+        <li><a href="/resume/kishanb_resume_2016.pdf">RESUME</a></li>
+        
+      
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      
+      <div class="container">
+        <div class="blog-post">
+          <h3>
+            <strong><a href="https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/">How to get the DDL dump of a redshift database</a></strong>
+          </h3>
+        </div>
+        <div class="blog-title">
+          <h4>
+          January 12, 2023
+            &nbsp;&nbsp;
+            
+            <span class="label label-success">aws</span>
+            
+            <span class="label label-success">redshift</span>
+            
+            <span class="label label-success">redshift serverless</span>
+            
+          </h4>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="blogpost">
+              <p>When I was googling &ldquo;How to get the DDL dump of a redshift database&rdquo; I found <a href="https://awsbytes.com/how-to-get-the-ddl-of-a-table-in-redshift-database/">this blog</a>
+which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable
+for me, so I tried and found a better way which is given below</p>
+<h2 id="approach">Approach</h2>
+<p>The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api</p>
+<ul>
+<li><a href="https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_TABLE.html">SHOW TABLE</a></li>
+<li><a href="https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_VIEW.html">SHOW VIEW</a></li>
+<li><a href="https://docs.aws.amazon.com/redshift/latest/dg/r_SHOW_EXTERNAL_TABLE.html">SHOW_EXTERNAL_TABLE</a></li>
+</ul>
+<h2 id="steps">Steps</h2>
+<ul>
+<li>Ensure <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html">awscli</a> and <a href="https://stedolan.github.io/jq/tutorial/">jq</a> command are installed.</li>
+<li>Create a script named <code>dumpddl.sh</code> with the following contents and give it executable permissions using command <code>chmod +x ./dumpddl.sh</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/usr/bin/env bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>CLUSTER_IDENTIFIER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;&lt;your cluster identifier - required only for managed redshift&gt;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>WORKGROUP_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;&lt;workgroup name - required only for serverless&gt;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>DATABASE<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;&lt;your database&gt;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>DATABASE_USER<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;&lt;your database user&gt;&gt;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">function</span> query_result<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>  query<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>  query_id<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>aws redshift-data execute-statement --with-event --db-user <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DATABASE_USER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --cluster-identifier <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>CLUSTER_IDENTIFIER<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --workgroup-name <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>WORKGROUP_NAME<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --database <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>DATABASE<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> --sql <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>query<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | jq -r <span style="color:#e6db74">&#34;.Id&#34;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>  sleep <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>  aws redshift-data get-statement-result --id <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>query_id<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> | jq -r <span style="color:#e6db74">&#34;.Records[][0].stringValue&#34;</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Replace the below names of tables, views and external tables with the ones you want to take ddl dump on</span>
+</span></span><span style="display:flex;"><span>query_result <span style="color:#e6db74">&#34;SHOW TABLE person&#34;</span>
+</span></span><span style="display:flex;"><span>query_result <span style="color:#e6db74">&#34;SHOW VIEW org_view&#34;</span>
+</span></span><span style="display:flex;"><span>query_result <span style="color:#e6db74">&#34;SHOW EXTERNAL TABLE \&#34;org_schema\&#34;.employee_details&#34;</span>
+</span></span></code></pre></div><ul>
+<li>Run following command to get the ddl dump</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>./dumpddl.sh &gt; ddl_dump.sql
+</span></span></code></pre></div><h2 id="pros">Pros</h2>
+<ul>
+<li>No need to install anything inside the redshift cluster.</li>
+<li>Works from the local machine even if redshift cluster is within a VPC(through redshift data API).</li>
+<li>Works for both managed redshift and serverless redshift.</li>
+</ul>
+<h2 id="cons">Cons</h2>
+<ul>
+<li>Requires us to know the list of tables and views for which we want the ddl dump.</li>
+</ul>
+
+              <hr>
+              <div class="related-posts">
+                <h5>Related Posts</h5>
+                
+                  <div class="row">
+                    <div class="col-sm-4 col-md-4 col-lg-4">
+                      <h6 style="text-align: right">
+                        November 26, 2018
+                      </h6>
+                    </div>
+                    <div class="col-sm-8 col-md-8 col-lg-8">
+                      <h6 style="text-align: left">
+                        <strong><a href="/blog/aws-cli-by-example/">Aws cli by example</a></strong>
+                      </h6>
+                    </div>
+                  </div>
+                
+              </div>
+            </div>
+          </div>
+          <hr>
+        <div class="disqus">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+
+    (function() {
+      
+      
+      if (window.location.hostname == "localhost")
+        return;
+
+      var disqus_shortname = 'kishanbsh';
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com/" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+        </div>
+      </div>
+      
+    </div>
+
+    
+    <footer>
+  <div id="footer">
+    <div class="container">
+      <p class="text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io/">Hugo</a> and
+      <a href="http://www.github.com/nurlansu/hugo-sustain/">sustain</a> with ♥</p>
+    </div>
+  </div>
+</footer>
+<div class="footer"></div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://kishaningithub.github.io/js/docs.min.js"></script>
+<script src="https://kishaningithub.github.io/js/main.js"></script>
+
+<script src="https://kishaningithub.github.io/js/ie10-viewport-bug-workaround.js"></script>
+
+
+    
+  </body>
+</html>
