@@ -6,164 +6,112 @@
     <description>Recent content on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Thu, 12 Jan 2023 10:34:53 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 12 Jan 2023 10:34:53 +0530</lastBuildDate>
+    <atom:link href="https://kishaningithub.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to get the DDL dump of a redshift database</title>
       <link>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</link>
       <pubDate>Thu, 12 Jan 2023 10:34:53 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</guid>
-      <description>When I was googling &amp;ldquo;How to get the DDL dump of a redshift database&amp;rdquo; I found this blog which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable for me, so I tried and found a better way which is given below
-Approach The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api</description>
+      <description>When I was googling &amp;ldquo;How to get the DDL dump of a redshift database&amp;rdquo; I found this blog which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable for me, so I tried and found a better way which is given below&#xA;Approach The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api</description>
     </item>
-    
     <item>
       <title>Used TDD Approach for a Hello World Rust CLI App</title>
       <link>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</link>
       <pubDate>Sun, 26 Jun 2022 15:12:24 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/used-tdd-approach-for-a-hello-world-rust-cli-app/</guid>
-      <description>For the first time ever in my life i wrote hello world application using TDD (Test driven development). Don&amp;rsquo;t get me wrong here, i have practiced TDD before for larger applications but never have i done it for an hello world app.
-Problem Write an CLI application that prints out &amp;ldquo;Hello TDD world!&amp;rdquo; in STDOUT.
-How did i do it? I created a project using cargo new hello-tdd-world I added a dependency assert_cmd which lets us test out outputs of any binary program Created a file tests/cli.</description>
+      <description>For the first time ever in my life i wrote hello world application using TDD (Test driven development). Don&amp;rsquo;t get me wrong here, i have practiced TDD before for larger applications but never have i done it for an hello world app.&#xA;Problem Write an CLI application that prints out &amp;ldquo;Hello TDD world!&amp;rdquo; in STDOUT.&#xA;How did i do it? I created a project using cargo new hello-tdd-world I added a dependency assert_cmd which lets us test out outputs of any binary program Created a file tests/cli.</description>
     </item>
-    
     <item>
       <title>Use Zap to Perform Dast</title>
       <link>https://kishaningithub.github.io/blog/use-zap-to-perform-dast/</link>
       <pubDate>Wed, 16 Feb 2022 14:02:53 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/use-zap-to-perform-dast/</guid>
       <description>Introduction What is Dynamic Application Security Testing (DAST) What is ZAP How to use ZAP ZAP Scan for API Local Run Example - for API with Swagger For SOAP/GraphQL CircleCI Integrate Example - for API with Swagger For SOAP/GraphQL ZAP Scan for Application (with UI) Local Run for UI app CircleCI Integration for UI app Introduction What is Dynamic Application Security Testing (DAST) Dynamic application security testing (DAST) is a process of testing an application or software product in an operating state.</description>
     </item>
-    
     <item>
       <title>Getting Hard Disk Info in Mac Using Terminal</title>
       <link>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</link>
       <pubDate>Tue, 16 Nov 2021 15:07:38 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</guid>
-      <description>Its pretty easy. Just run the diskutil like the following
-Command diskutil info disk0 Output Device Identifier: disk0 Device Node: /dev/disk0 Whole: Yes Part of Whole: disk0 Device / Media Name: APPLE SSD AP0256M Volume Name: Not applicable (no file system) Mounted: Not applicable (no file system) File System: None Content (IOContent): GUID_partition_scheme OS Can Be Installed: No Media Type: Generic Protocol: PCI-Express SMART Status: Verified Disk Size: 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units) Device Block Size: 4096 Bytes Media OS Use Only: No Media Read-Only: No Volume Read-Only: Not applicable (no file system) Device Location: Internal Removable Media: Fixed Solid State: Yes Virtual: No </description>
+      <description>Its pretty easy. Just run the diskutil like the following&#xA;Command diskutil info disk0 Output Device Identifier: disk0 Device Node: /dev/disk0 Whole: Yes Part of Whole: disk0 Device / Media Name: APPLE SSD AP0256M Volume Name: Not applicable (no file system) Mounted: Not applicable (no file system) File System: None Content (IOContent): GUID_partition_scheme OS Can Be Installed: No Media Type: Generic Protocol: PCI-Express SMART Status: Verified Disk Size: 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units) Device Block Size: 4096 Bytes Media OS Use Only: No Media Read-Only: No Volume Read-Only: Not applicable (no file system) Device Location: Internal Removable Media: Fixed Solid State: Yes Virtual: No </description>
     </item>
-    
     <item>
       <title>Configuring Hp Deskjet 2700 Printer for Printing Over Wifi</title>
       <link>https://kishaningithub.github.io/blog/configuring-hp-deskjet-2700-printer-for-printing-over-wifi/</link>
       <pubDate>Mon, 27 Sep 2021 14:15:41 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/configuring-hp-deskjet-2700-printer-for-printing-over-wifi/</guid>
-      <description>It was so frustrating for me to connect my printer(HP DeskJet Ink Advantage 2700 All-In-One printer) to print over wifi network and the most calming part in this frustrating experience is the slogan that is stamped on the printer! &amp;ldquo;Keep it simple&amp;rdquo; 🤣🤣
-It is definitely not simple unless you know the trick 😊
-Hence i am writing this blog for my future self and also people who face the same issue.</description>
+      <description>It was so frustrating for me to connect my printer(HP DeskJet Ink Advantage 2700 All-In-One printer) to print over wifi network and the most calming part in this frustrating experience is the slogan that is stamped on the printer! &amp;ldquo;Keep it simple&amp;rdquo; 🤣🤣&#xA;It is definitely not simple unless you know the trick 😊&#xA;Hence i am writing this blog for my future self and also people who face the same issue.</description>
     </item>
-    
     <item>
       <title>Capturing Custom Last Request Time Metrics Using Prometheus in Gin</title>
       <link>https://kishaningithub.github.io/blog/capturing-custom-last-request-time-metrics-using-prometheus-in-gin/</link>
       <pubDate>Fri, 17 Sep 2021 14:15:41 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/capturing-custom-last-request-time-metrics-using-prometheus-in-gin/</guid>
-      <description>We will be using golang, gin, prometheus go library to expose last request time metrics
-Out of the box metrics Spin up a gin go application which exposes the metrics which comes out of the box via the /metrics endpoint
-package main import ( &amp;#34;github.com/gin-gonic/gin&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; &amp;#34;log&amp;#34; ) func main() { r := gin.Default() r.GET(&amp;#34;/metrics&amp;#34;, func(c *gin.Context) { handler := promhttp.Handler() handler.ServeHTTP(c.Writer, c.Request) }) err := r.Run(&amp;#34;:8080&amp;#34;) if err != nil { log.</description>
+      <description>We will be using golang, gin, prometheus go library to expose last request time metrics&#xA;Out of the box metrics Spin up a gin go application which exposes the metrics which comes out of the box via the /metrics endpoint&#xA;package main import ( &amp;#34;github.com/gin-gonic/gin&amp;#34; &amp;#34;github.com/prometheus/client_golang/prometheus/promhttp&amp;#34; &amp;#34;log&amp;#34; ) func main() { r := gin.Default() r.GET(&amp;#34;/metrics&amp;#34;, func(c *gin.Context) { handler := promhttp.Handler() handler.ServeHTTP(c.Writer, c.Request) }) err := r.Run(&amp;#34;:8080&amp;#34;) if err != nil { log.</description>
     </item>
-    
     <item>
       <title>Backup and restore all your apps in Mac OS</title>
       <link>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</link>
       <pubDate>Tue, 23 Mar 2021 10:24:15 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</guid>
-      <description>Prerequisite This assumes you are installing everything using homebrew as a practice. If you are not doing it already, getting started is as easy as it gets. Some
-Search for an app(cli/gui)
-brew search &amp;lt;&amp;lt;app&amp;gt;&amp;gt; To install a cli app
-brew install &amp;lt;&amp;lt;cli app&amp;gt;&amp;gt; To install a GUI app
-brew install --cask &amp;lt;&amp;lt;gui app&amp;gt;&amp;gt; Backup all your apps (cli and gui) brew bundle dump This will output a file called Brewfile whose contents will look like the following</description>
+      <description>Prerequisite This assumes you are installing everything using homebrew as a practice. If you are not doing it already, getting started is as easy as it gets. Some&#xA;Search for an app(cli/gui)&#xA;brew search &amp;lt;&amp;lt;app&amp;gt;&amp;gt; To install a cli app&#xA;brew install &amp;lt;&amp;lt;cli app&amp;gt;&amp;gt; To install a GUI app&#xA;brew install --cask &amp;lt;&amp;lt;gui app&amp;gt;&amp;gt; Backup all your apps (cli and gui) brew bundle dump This will output a file called Brewfile whose contents will look like the following</description>
     </item>
-    
     <item>
       <title>Openssl by Example</title>
       <link>https://kishaningithub.github.io/blog/openssl-by-example/</link>
       <pubDate>Mon, 26 Nov 2018 22:43:54 +0100</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/openssl-by-example/</guid>
       <description>Symmetric key Encryption Decryption Asymmetric key Key Generation Public key Private key Encryption Decryption Sending signed messages Reading signed messages Encrypting private key Others Find openssl version List ciphers Symmetric key Encryption $ echo &amp;#34;top secret text&amp;#34; | openssl enc -aes-256-cbc -base64 enter aes-256-cbc encryption password: Verifying - enter aes-256-cbc encryption password: &amp;lt;&amp;lt; encrypted text &amp;gt;&amp;gt; Decryption $ echo &amp;#34;&amp;lt;&amp;lt; encrypted text &amp;gt;&amp;gt;&amp;#34; | openssl enc -d -aes-256-cbc -base64 enter aes-256-cbc decryption password: top secret text Asymmetric key Key Generation Public key openssl genrsa -out private.</description>
     </item>
-    
     <item>
       <title>Aws cli by example</title>
       <link>https://kishaningithub.github.io/blog/aws-cli-by-example/</link>
       <pubDate>Mon, 26 Nov 2018 15:37:58 +0100</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/aws-cli-by-example/</guid>
-      <description>Dynamo DB Get value using primary key aws dynamodb get-item --table-name users --key &amp;#39;{&amp;#34;username&amp;#34;: {&amp;#34;S&amp;#34;: &amp;#34;test&amp;#34;}}&amp;#39; Dump table data as csv This expects that you have installed jq command on you system.
-aws dynamodb scan --table-name users \ --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; \ --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.csv Query using a portion of composite key aws dynamodb query --table-name users \ --key-condition-expression &amp;#34;username = :username&amp;#34; \ --expression-attribute-values &amp;#39;{&amp;#34;:username&amp;#34;:{&amp;#34;S&amp;#34;:&amp;#34;test user&amp;#34;}}&amp;#39; KMS Generate data key from KMS master key aws kms generate-data-key-without-plaintext --key-id &amp;lt;&amp;lt;KMS master key&amp;gt;&amp;gt; --key-spec AES_256 --query CiphertextBlob --output text </description>
+      <description>Dynamo DB Get value using primary key aws dynamodb get-item --table-name users --key &amp;#39;{&amp;#34;username&amp;#34;: {&amp;#34;S&amp;#34;: &amp;#34;test&amp;#34;}}&amp;#39; Dump table data as csv This expects that you have installed jq command on you system.&#xA;aws dynamodb scan --table-name users \ --query &amp;#34;Items[].[username.S,email.S,passwordHash.S]&amp;#34; \ --output json | jq -r &amp;#39;.[] | @csv&amp;#39; &amp;gt; dump.csv Query using a portion of composite key aws dynamodb query --table-name users \ --key-condition-expression &amp;#34;username = :username&amp;#34; \ --expression-attribute-values &amp;#39;{&amp;#34;:username&amp;#34;:{&amp;#34;S&amp;#34;:&amp;#34;test user&amp;#34;}}&amp;#39; KMS Generate data key from KMS master key aws kms generate-data-key-without-plaintext --key-id &amp;lt;&amp;lt;KMS master key&amp;gt;&amp;gt; --key-spec AES_256 --query CiphertextBlob --output text </description>
     </item>
-    
     <item>
       <title>Graphviz by example</title>
       <link>https://kishaningithub.github.io/blog/graphviz-by-example/</link>
       <pubDate>Wed, 21 Nov 2018 06:34:16 +0100</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/graphviz-by-example/</guid>
-      <description>&amp;laquo; work in progress &amp;raquo;
-This page is a documentation of all the graphviz stuff that i did for my future self. I hope you find this useful as well 😊</description>
+      <description>&amp;laquo; work in progress &amp;raquo;&#xA;This page is a documentation of all the graphviz stuff that i did for my future self. I hope you find this useful as well 😊</description>
     </item>
-    
     <item>
       <title>Configuring multiple databases in spring boot 2</title>
       <link>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</link>
       <pubDate>Sun, 18 Nov 2018 05:03:04 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/configuring-multiple-databases-in-spring-boot-2/</guid>
-      <description>&amp;laquo; Work in progress &amp;raquo;
-Have to felt the need for a spring boot application to connect with multiple relational databases? If so, Follow on to know how to get it up and running
-Add the following your application.properties
-app.datasource.first.url=jdbc:postgresql://localhost:5432/demo-db app.datasource.first.username=dbuser app.datasource.first.password=dbpass app.datasource.second.url=jdbc:mysql://localhost/second app.datasource.second.username=dbuser app.datasource.second.password=dbpass The complete source code can be found on github</description>
+      <description>&amp;laquo; Work in progress &amp;raquo;&#xA;Have to felt the need for a spring boot application to connect with multiple relational databases? If so, Follow on to know how to get it up and running&#xA;Add the following your application.properties&#xA;app.datasource.first.url=jdbc:postgresql://localhost:5432/demo-db app.datasource.first.username=dbuser app.datasource.first.password=dbpass app.datasource.second.url=jdbc:mysql://localhost/second app.datasource.second.username=dbuser app.datasource.second.password=dbpass The complete source code can be found on github</description>
     </item>
-    
     <item>
       <title>Everyday Cryptography to secure your applications using Open Source tools</title>
       <link>https://kishaningithub.github.io/talks/everyday-cryptography/</link>
       <pubDate>Sat, 17 Nov 2018 19:17:42 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/talks/everyday-cryptography/</guid>
-      <description>View the talk The talk is hosted on hacker earth here.
-Description Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8 Even if it doesn’t, you are using these on a day-to-day basis in securing your information!
-We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.
-In this talk, we will be exploring the constructs of cryptographic techniques.</description>
+      <description>View the talk The talk is hosted on hacker earth here.&#xA;Description Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8 Even if it doesn’t, you are using these on a day-to-day basis in securing your information!&#xA;We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.&#xA;In this talk, we will be exploring the constructs of cryptographic techniques.</description>
     </item>
-    
     <item>
       <title>Migrating from glide to dep</title>
       <link>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</link>
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</guid>
-      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.
-➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
+      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.&#xA;➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
     </item>
-    
     <item>
       <title>Breaking rust strings</title>
       <link>https://kishaningithub.github.io/blog/breaking-rust-strings/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/breaking-rust-strings/</guid>
-      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.
-If you expected the output to be 可. You are in for a surprise!
-break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
+      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.&#xA;If you expected the output to be 可. You are in for a surprise!&#xA;break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
     </item>
-    
     <item>
       <title>Projects</title>
       <link>https://kishaningithub.github.io/projects/</link>
       <pubDate>Sun, 02 Oct 2016 22:55:05 -0400</pubDate>
-      
       <guid>https://kishaningithub.github.io/projects/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

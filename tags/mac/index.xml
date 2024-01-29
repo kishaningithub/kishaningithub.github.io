@@ -6,19 +6,14 @@
     <description>Recent content in mac on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 23 Mar 2021 10:24:15 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Mar 2021 10:24:15 +0530</lastBuildDate>
+    <atom:link href="https://kishaningithub.github.io/tags/mac/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backup and restore all your apps in Mac OS</title>
       <link>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</link>
       <pubDate>Tue, 23 Mar 2021 10:24:15 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/back-up-and-restore-apps-in-mac/</guid>
-      <description>Prerequisite This assumes you are installing everything using homebrew as a practice. If you are not doing it already, getting started is as easy as it gets. Some
-Search for an app(cli/gui)
-brew search &amp;lt;&amp;lt;app&amp;gt;&amp;gt; To install a cli app
-brew install &amp;lt;&amp;lt;cli app&amp;gt;&amp;gt; To install a GUI app
-brew install --cask &amp;lt;&amp;lt;gui app&amp;gt;&amp;gt; Backup all your apps (cli and gui) brew bundle dump This will output a file called Brewfile whose contents will look like the following</description>
+      <description>Prerequisite This assumes you are installing everything using homebrew as a practice. If you are not doing it already, getting started is as easy as it gets. Some&#xA;Search for an app(cli/gui)&#xA;brew search &amp;lt;&amp;lt;app&amp;gt;&amp;gt; To install a cli app&#xA;brew install &amp;lt;&amp;lt;cli app&amp;gt;&amp;gt; To install a GUI app&#xA;brew install --cask &amp;lt;&amp;lt;gui app&amp;gt;&amp;gt; Backup all your apps (cli and gui) brew bundle dump This will output a file called Brewfile whose contents will look like the following</description>
     </item>
-    
   </channel>
 </rss>

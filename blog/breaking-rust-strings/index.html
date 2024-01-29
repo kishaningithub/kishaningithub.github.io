@@ -75,7 +75,7 @@
               <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> chinese_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;可通過每頁左上角的連結隨時調整&#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> chinese_text_slice <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>chinese_text[<span style="color:#ae81ff">0</span><span style="color:#f92672">..</span><span style="color:#ae81ff">1</span>]; <span style="color:#75715e">// Focus here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    println!(<span style="color:#e6db74">&#34;{}&#34;</span>, chinese_text_slice);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    println!(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, chinese_text_slice);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>In the above code i want to extract the first character out which is 可.
 Since the end indices are exclusive in rust i put forth a slice <code>0..1</code> on <code>chinese_text</code>.</p>
@@ -110,7 +110,7 @@ is extracted from a JSON REST response which gave you chinese where you were exp
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">main</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> chinese_text <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;可通過每頁左上角的連結隨時調整&#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> chinese_text_slice <span style="color:#f92672">=</span> <span style="color:#f92672">&amp;</span>chinese_text[<span style="color:#ae81ff">0</span><span style="color:#f92672">..</span><span style="color:#ae81ff">3</span>]; <span style="color:#75715e">// Focus here
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    println!(<span style="color:#e6db74">&#34;{}&#34;</span>, chinese_text_slice);
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    println!(<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{}</span><span style="color:#e6db74">&#34;</span>, chinese_text_slice);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>The slice <code>0..3</code> refers byte <code>0,1,2</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>break_strings$ RUST_BACKTRACE<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> cargo run

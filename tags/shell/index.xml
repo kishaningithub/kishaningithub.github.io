@@ -6,16 +6,14 @@
     <description>Recent content in shell on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 16 Nov 2021 15:07:38 +0530</lastBuildDate><atom:link href="https://kishaningithub.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 16 Nov 2021 15:07:38 +0530</lastBuildDate>
+    <atom:link href="https://kishaningithub.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting Hard Disk Info in Mac Using Terminal</title>
       <link>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</link>
       <pubDate>Tue, 16 Nov 2021 15:07:38 +0530</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/getting-hard-disk-info-in-mac-using-terminal/</guid>
-      <description>Its pretty easy. Just run the diskutil like the following
-Command diskutil info disk0 Output Device Identifier: disk0 Device Node: /dev/disk0 Whole: Yes Part of Whole: disk0 Device / Media Name: APPLE SSD AP0256M Volume Name: Not applicable (no file system) Mounted: Not applicable (no file system) File System: None Content (IOContent): GUID_partition_scheme OS Can Be Installed: No Media Type: Generic Protocol: PCI-Express SMART Status: Verified Disk Size: 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units) Device Block Size: 4096 Bytes Media OS Use Only: No Media Read-Only: No Volume Read-Only: Not applicable (no file system) Device Location: Internal Removable Media: Fixed Solid State: Yes Virtual: No </description>
+      <description>Its pretty easy. Just run the diskutil like the following&#xA;Command diskutil info disk0 Output Device Identifier: disk0 Device Node: /dev/disk0 Whole: Yes Part of Whole: disk0 Device / Media Name: APPLE SSD AP0256M Volume Name: Not applicable (no file system) Mounted: Not applicable (no file system) File System: None Content (IOContent): GUID_partition_scheme OS Can Be Installed: No Media Type: Generic Protocol: PCI-Express SMART Status: Verified Disk Size: 251.0 GB (251000193024 Bytes) (exactly 490234752 512-Byte-Units) Device Block Size: 4096 Bytes Media OS Use Only: No Media Read-Only: No Volume Read-Only: Not applicable (no file system) Device Location: Internal Removable Media: Fixed Solid State: Yes Virtual: No </description>
     </item>
-    
   </channel>
 </rss>

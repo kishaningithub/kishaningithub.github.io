@@ -6,27 +6,21 @@
     <description>Recent content in programming on Kishan B</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-US</language>
-    <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://kishaningithub.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 May 2018 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://kishaningithub.github.io/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Migrating from glide to dep</title>
       <link>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</link>
       <pubDate>Tue, 15 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/migrating-from-glide-to-dep/</guid>
-      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.
-➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
+      <description>I recently migrated one of the go lang projects that i contribute to which is csvdiff from glide to dep. Here is what i had to do.&#xA;➜ csvdiff git:(glide-to-dep-migration) dep init Importing configuration from glide. These are only initial constraints, and are further refined during the solve process. Detected glide configuration files... Converting from glide.yaml and glide.lock... Using ^1.0.0 as initial constraint for imported dep github.com/cespare/xxhash Trying v1.0.0 (5c37fe3) as initial lock for imported dep github.</description>
     </item>
-    
     <item>
       <title>Breaking rust strings</title>
       <link>https://kishaningithub.github.io/blog/breaking-rust-strings/</link>
       <pubDate>Sat, 05 May 2018 00:00:00 +0000</pubDate>
-      
       <guid>https://kishaningithub.github.io/blog/breaking-rust-strings/</guid>
-      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.
-If you expected the output to be 可. You are in for a surprise!
-break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
+      <description>fn main() { let chinese_text = &amp;#34;可通過每頁左上角的連結隨時調整&amp;#34;; let chinese_text_slice = &amp;amp;chinese_text[0..1]; // Focus here println!(&amp;#34;{}&amp;#34;, chinese_text_slice); } In the above code i want to extract the first character out which is 可. Since the end indices are exclusive in rust i put forth a slice 0..1 on chinese_text.&#xA;If you expected the output to be 可. You are in for a surprise!&#xA;break_strings$ RUST_BACKTRACE=1 cargo run Finished dev [unoptimized + debuginfo] target(s) in 0.</description>
     </item>
-    
   </channel>
 </rss>

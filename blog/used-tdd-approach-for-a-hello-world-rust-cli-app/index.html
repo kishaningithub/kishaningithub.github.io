@@ -88,7 +88,7 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">#[test]</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">fn</span> <span style="color:#a6e22e">test_cli_app_should_print_hello_tdd_world</span>() {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">mut</span> cmd <span style="color:#f92672">=</span> Command::cargo_bin(<span style="color:#e6db74">&#34;hello-world-tdd&#34;</span>).unwrap();
-</span></span><span style="display:flex;"><span>    cmd.assert().success().stdout(<span style="color:#e6db74">&#34;Hello TDD world!\n&#34;</span>);
+</span></span><span style="display:flex;"><span>    cmd.assert().success().stdout(<span style="color:#e6db74">&#34;Hello TDD world!</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><ul>
 <li>Run the test using command <code>cargo test</code></li>
