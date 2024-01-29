@@ -1,4 +1,5 @@
 .DS_Store
 public
 .hugo_build.lock
-.idea/*
+.idea/
+.obsidian/
