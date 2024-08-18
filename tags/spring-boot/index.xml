@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>spring boot on Kishan B</title>
+    <title>Spring Boot on Kishan B</title>
     <link>https://kishaningithub.github.io/tags/spring-boot/</link>
-    <description>Recent content in spring boot on Kishan B</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Spring Boot on Kishan B</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Sun, 18 Nov 2018 05:03:04 +0530</lastBuildDate>
     <atom:link href="https://kishaningithub.github.io/tags/spring-boot/index.xml" rel="self" type="application/rss+xml" />

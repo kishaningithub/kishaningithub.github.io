@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>shell on Kishan B</title>
+    <title>Shell on Kishan B</title>
     <link>https://kishaningithub.github.io/tags/shell/</link>
-    <description>Recent content in shell on Kishan B</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Shell on Kishan B</description>
+    <generator>Hugo</generator>
     <language>en-US</language>
     <lastBuildDate>Tue, 16 Nov 2021 15:07:38 +0530</lastBuildDate>
     <atom:link href="https://kishaningithub.github.io/tags/shell/index.xml" rel="self" type="application/rss+xml" />
