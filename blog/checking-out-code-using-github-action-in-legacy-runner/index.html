@@ -82,8 +82,14 @@
 </span></span></code></pre></div><p>with</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    git clone &#34;https://github.com/${GITHUB_REPOSITORY}.git&#34; &#34;${GITHUB_WORKSPACE}&#34;</span>    
-</span></span></code></pre></div>
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    git clone --depth 1 -b &#34;${{ github.head_ref || github.ref_name }}&#34; &#34;https://github.com/${{ github.repository }}.git&#34; .</span>    
+</span></span></code></pre></div><h3 id="note">Note</h3>
+<ul>
+<li><code>--depth 1</code> performs a shallow-clone there by increasing your performance as we don&rsquo;t need to pull the entire commit history for every pipeline run.</li>
+<li><code>${{ github.head_ref || github.ref_name }}</code> doing this to ensure we always get the name of the branch which triggered the pipelines. This way of doing it makes it trigger agnostic i.e. both push and pull request trigger will work as intended.</li>
+<li><code>.</code> The dot at the end ensures that the checkout happens in the current directory which is the workspace.</li>
+</ul>
+
               <hr>
               <div class="related-posts">
                 <h5>Related Posts</h5>
