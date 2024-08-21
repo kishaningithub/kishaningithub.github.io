@@ -13,7 +13,7 @@
       <link>https://kishaningithub.github.io/blog/checking-out-code-using-github-action-in-legacy-runner/</link>
       <pubDate>Sun, 18 Aug 2024 13:31:29 +0530</pubDate>
       <guid>https://kishaningithub.github.io/blog/checking-out-code-using-github-action-in-legacy-runner/</guid>
-      <description>Problem Performing a simple git checkout using official checkout action fails in a legacy self hosted runner running amazon linux 2 because newer versions of nodejs(&amp;gt;= 20) requires a newer version of GLIBC which is not available in these operating systems.&#xA;Solution Use bash to perform the checkout in the action code i.e&#xA;replace the line&#xA;- uses: actions/checkout@v3 with&#xA;- name: Checkout run: | git clone --depth 1 -b &amp;#34;${{ github.</description>
+      <description>Problem Performing a simple git checkout using official checkout action fails in a legacy self hosted runner running amazon linux 2 because newer versions of nodejs(&amp;gt;= 20) requires a newer version of GLIBC which is not available in these operating systems.&#xA;Solution Use bash to perform the checkout in the action code i.e&#xA;replace the line&#xA;- uses: actions/checkout@v3 with&#xA;- name: Checkout run: | git clone --depth 1 -b &amp;#34;${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}&amp;#34; &amp;#34;https://github.</description>
     </item>
     <item>
       <title>How to get the DDL dump of a redshift database</title>
