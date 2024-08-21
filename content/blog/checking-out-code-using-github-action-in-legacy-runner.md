@@ -25,11 +25,11 @@ with
 ```yaml
 - name: Checkout
   run: |
-    git clone --depth 1 -b "${{ github.head_ref || github.ref_name }}" "https://github.com/${{ github.repository }}.git" .
+    git clone --depth 1 -b "${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}" "https://github.com/${GITHUB_REPOSITORY}.git" .
 ```
 
 ### Note
 
 - `--depth 1` performs a shallow-clone there by increasing your performance as we don't need to pull the entire commit history for every pipeline run.
-- `${{ github.head_ref || github.ref_name }}` doing this to ensure we always get the name of the branch which triggered the pipelines. This way of doing it makes it trigger agnostic i.e. both push and pull request trigger will work as intended.
+- `${GITHUB_HEAD_REF:-$GITHUB_REF_NAME}` doing this to ensure we always get the name of the branch which triggered the pipelines. This way of doing it makes it trigger agnostic i.e. both push and pull request trigger will work as intended.
 - `.` The dot at the end ensures that the checkout happens in the current directory which is the workspace.
