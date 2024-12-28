@@ -13,7 +13,7 @@
       <link>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</link>
       <pubDate>Thu, 12 Jan 2023 10:34:53 +0530</pubDate>
       <guid>https://kishaningithub.github.io/blog/how-to-get-the-ddl-dump-of-a-redshift-database/</guid>
-      <description>When I was googling &amp;ldquo;How to get the DDL dump of a redshift database&amp;rdquo; I found this blog which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable for me, so I tried and found a better way which is given below&#xA;Approach The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api</description>
+      <description>&lt;p&gt;When I was googling &amp;ldquo;How to get the DDL dump of a redshift database&amp;rdquo; I found &lt;a href=&#34;https://awsbytes.com/how-to-get-the-ddl-of-a-table-in-redshift-database/&#34;&gt;this blog&lt;/a&gt;&#xA;which proposed a way do it but the con of the approach proposed there is it requires us create new objects in redshift just to extract DDL which was not acceptable&#xA;for me, so I tried and found a better way which is given below&lt;/p&gt;&#xA;&lt;h2 id=&#34;approach&#34;&gt;Approach&lt;/h2&gt;&#xA;&lt;p&gt;The approach below makes use of the following commands from redshift and wraps them in a bash script which makes use of the redshift data api&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

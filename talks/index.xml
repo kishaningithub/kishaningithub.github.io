@@ -13,7 +13,7 @@
       <link>https://kishaningithub.github.io/talks/everyday-cryptography/</link>
       <pubDate>Sat, 17 Nov 2018 19:17:42 +0530</pubDate>
       <guid>https://kishaningithub.github.io/talks/everyday-cryptography/</guid>
-      <description>View the talk The talk is hosted on hacker earth here.&#xA;Description Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8 Even if it doesn’t, you are using these on a day-to-day basis in securing your information!&#xA;We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.&#xA;In this talk, we will be exploring the constructs of cryptographic techniques.</description>
+      <description>&lt;h2 id=&#34;view-the-talk&#34;&gt;View the talk&lt;/h2&gt;&#xA;&lt;p&gt;The talk is hosted on hacker earth&#xA;&lt;a href=&#34;https://www.hackerearth.com/blog/everyday-cryptography-to-secure-your-applications-using-open-source-tools/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;&#xA;&lt;h2 id=&#34;description&#34;&gt;Description&lt;/h2&gt;&#xA;&lt;p&gt;Does this alphabet soup make sense to you: AES, HMAC, ECDSA, RSA, SHA512, CA, PKCS8&#xA;Even if it doesn’t, you are using these on a day-to-day basis in securing your information!&lt;/p&gt;&#xA;&lt;p&gt;We are pleased to announce our next webinar in collaboration with ThoughtWorks on “Everyday Cryptography to secure your applications using Open Source tools”.&lt;/p&gt;&#xA;&lt;p&gt;In this talk, we will be exploring the constructs of cryptographic techniques. We will touch upon the importance of the above-mentioned algorithms, along with a live demo of the supporting tools.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
