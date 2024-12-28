@@ -5,7 +5,7 @@ title = "Kishan B"
 disqusShortname = "kishanbsh"
 # Enable Google Analytics by entering your tracking code
 googleAnalytics = ""
-theme = "hugo-sustain"
+theme = "github.com/kishaningithub/hugo-sustain"
 pygmentsCodeFences = true
 
 [permalinks]
