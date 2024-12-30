@@ -1,5 +1,5 @@
-module kishaningithub.github.io
+module github.com/kishaningithub/kishaningithub.github.io
 
-go 1.23
+go 1.23.4
 
-require github.com/kishaningithub/hugo-sustain v0.0.0-20240818080527-3b0fcc131e22 // indirect
+require github.com/kishaningithub/hugo-sustain v1.0.0 // indirect
